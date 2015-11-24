@@ -1,0 +1,95 @@
+{
+  "items": {
+    "PlaylistItem": [],
+    "StreamItem": [
+      {
+        "attributes": {
+          "attributes": {
+            "program-id": 1,
+            "bandwidth": 232370,
+            "codecs": "mp4a.40.2, avc1.4d4015"
+          }
+        },
+        "properties": {
+          "byteRange": null,
+          "date": null,
+          "discontinuity": null,
+          "duration": null,
+          "title": null,
+          "uri": "gear1/prog_index.m3u8"
+        }
+      },
+      {
+        "attributes": {
+          "attributes": {
+            "program-id": 1,
+            "bandwidth": 649879,
+            "codecs": "mp4a.40.2, avc1.4d401e"
+          }
+        },
+        "properties": {
+          "byteRange": null,
+          "date": null,
+          "discontinuity": null,
+          "duration": null,
+          "title": null,
+          "uri": "gear2/prog_index.m3u8"
+        }
+      },
+      {
+        "attributes": {
+          "attributes": {
+            "program-id": 1,
+            "bandwidth": 991714,
+            "codecs": "mp4a.40.2, avc1.4d401e"
+          }
+        },
+        "properties": {
+          "byteRange": null,
+          "date": null,
+          "discontinuity": null,
+          "duration": null,
+          "title": null,
+          "uri": "gear3/prog_index.m3u8"
+        }
+      },
+      {
+        "attributes": {
+          "attributes": {
+            "program-id": 1,
+            "bandwidth": 1927833,
+            "codecs": "mp4a.40.2, avc1.4d401f"
+          }
+        },
+        "properties": {
+          "byteRange": null,
+          "date": null,
+          "discontinuity": null,
+          "duration": null,
+          "title": null,
+          "uri": "gear4/prog_index.m3u8"
+        }
+      },
+      {
+        "attributes": {
+          "attributes": {
+            "program-id": 1,
+            "bandwidth": 41457,
+            "codecs": "mp4a.40.2"
+          }
+        },
+        "properties": {
+          "byteRange": null,
+          "date": null,
+          "discontinuity": null,
+          "duration": null,
+          "title": null,
+          "uri": "gear0/prog_index.m3u8"
+        }
+      }
+    ],
+    "IframeStreamItem": [],
+    "MediaItem": []
+  },
+  "properties": {}
+}
