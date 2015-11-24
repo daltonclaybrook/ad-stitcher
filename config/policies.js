@@ -37,7 +37,8 @@ module.exports.policies = {
 
   StitchController: {
     '*': false,
-    stitchMaster: 'confirmStitchQuery'
+    stitchMaster: 'confirmStitchQuery',
+    stitchMedia: true
   }
 
 };

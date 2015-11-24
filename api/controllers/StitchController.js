@@ -6,7 +6,7 @@
  */
 
 var Q = require('q');
-var parseString = require('xml2js').parseString;
+var parseXML = require('xml2js').parseString;
 
 var self = module.exports = {
 
@@ -18,40 +18,33 @@ var self = module.exports = {
 	stitchMaster: function(req, res) {
 
 		var streamURL = new Buffer(req.query.streamURL, 'base64').toString("utf8");
-		var vmapURL = new Buffer(req.query.vmapURL, 'base64').toString("utf8");
-		sails.log.verbose('streamURL: ' + streamURL + '\nvmapURL: ' + vmapURL);
+		sails.log.verbose('streamURL: ' + streamURL + '\nvmapURL: ' + req.query.vmapURL);
 
 		var context = {
 			url: streamURL,
-			vmapURL: vmapURL
+			vmapURL: req.query.vmapURL
 		};
 
-		URLLoader.get(context)
-		.then(self.generatePlaylist)
-		.done(function success(obj) {
-			res.playlist(obj.urlData);
-		}, function error(err) {
-			Responder.sendResponse(res, err);
+		Playlist.fetchPlaylist(context)
+		.then(Playlist.insertNewURIs)
+		.then(Playlist.exportString)
+		.done(function success(context) {
+			res.playlist(context.playlistString);
+		}, function error(context) {
+			Responder.sendResponse(res, context);
 		});
-
-		// Q.all([
-		// 	self.fetchURL(streamURL),
-		// 	self.fetchURL(vmapURL)
-		// ])
-		// .spread(self.fetchVASTURLs)
-		// .done(function success(obj) {
-		// 	res.playlist(obj);
-		// }, function error(err) {
-		// 	sails.log.verbose('an error occurred:\n' + JSON.stringify(err, null, 2));
-		// 	res.serverError(err);
-		// });
 
 	},
 
 	// Used to generate a media playlist
 	stitchMedia: function(req, res) {
 
+		var master = new Buffer(req.query.master, 'base64').toString("utf8");
+		var uri = new Buffer(req.query.uri, 'base64').toString("utf8");
+		var vmapURL = new Buffer(req.query.vmap, 'base64').toString("utf8");
 
+		sails.log.verbose('\n\nstich media with master: ' + master + '\nURI: ' + uri + '\nVMAP: ' + vmapURL + '\n\n');
+		res.ok();
 
 	},
 
@@ -59,27 +52,12 @@ var self = module.exports = {
 	*	Helper methods
 	*/
 
-	generatePlaylist: function(context) {
-
-		// url: the stream URL
-		// urlData: the m3u8 master playlist
-		// vmapURL: the VMAP URL
-
-		var ctx = {
-			playlist: context.urlData
-		};
-		Playlist.parse(ctx);
-
-		return context;
-
-	},
-
 	fetchVASTURLs: function(streamData, vmapData) {
 		var deferred = Q.defer();
 
 		deferred.resolve(streamData);
 
-		// parseString(vmapData, function (err, result) {
+		// parseXML(vmapData, function (err, result) {
     // 	if (err) {
 		// 		deferred.reject(err);
 		// 	} else {
