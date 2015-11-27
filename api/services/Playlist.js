@@ -54,7 +54,9 @@ var self = module.exports = {
       playlist.items.StreamItem.forEach(function(item) {
         var masterURL = context.url;
         var uri = item.properties.uri;
-        var newURI = self.createURI(masterURL, uri, context.vmapURL);
+        var bandwidth = item.attributes.attributes.bandwidth;
+
+        var newURI = self.createURI(masterURL, uri, context.vmapURL, bandwidth);
         item.properties.uri = newURI;
       });
 
@@ -70,19 +72,28 @@ var self = module.exports = {
     });
   },
 
+  insertAds: function(context) {
+    return Q.fcall(function() {
+
+
+
+    });
+  },
+
   /**
   * Helpers
   */
 
-  createURI: function(masterURL, uri, vmap) {
+  createURI: function(masterURL, uri, vmap, bandwidth) {
     var base64Master = new Buffer(masterURL, 'utf8').toString('base64');
     var base64URI = new Buffer(uri, 'utf8').toString('base64');
 
     var urlEncodedMaster = encodeURIComponent(base64Master);
     var urlEncodedURI = encodeURIComponent(base64URI);
     var urlEncodedVMAP = encodeURIComponent(vmap);
+    var urlEncodedBandwidth = encodeURIComponent(bandwidth);
 
-    return 'media?master=' + urlEncodedMaster + '&uri=' + urlEncodedURI + '&vmap=' + urlEncodedVMAP;
+    return 'media?master=' + urlEncodedMaster + '&uri=' + urlEncodedURI + '&vmap=' + urlEncodedVMAP + '&bandwidth=' + urlEncodedBandwidth;
   }
 
 };

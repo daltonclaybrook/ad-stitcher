@@ -42,9 +42,25 @@ var self = module.exports = {
 		var master = new Buffer(req.query.master, 'base64').toString("utf8");
 		var uri = new Buffer(req.query.uri, 'base64').toString("utf8");
 		var vmapURL = new Buffer(req.query.vmap, 'base64').toString("utf8");
+		var bandwidth = req.query.bandwidth;
+
+		var components = master.split('/');
+		components[components.length-1] = uri;
+		var playlistURL = components.join('/');
+
+		Q.all([
+			Playlist.fetchPlaylist({ url: playlistURL }),
+			self.fetchXML({ url: vmapURL })
+		])
+		.spread(self.fetchVASTURLs)
+		.then(Playlist.insertAds)
+		.done(function success(context) {
+
+		}, function error(context) {
+
+		});
 
 		sails.log.verbose('\n\nstich media with master: ' + master + '\nURI: ' + uri + '\nVMAP: ' + vmapURL + '\n\n');
-		res.ok();
 
 	},
 
@@ -52,20 +68,8 @@ var self = module.exports = {
 	*	Helper methods
 	*/
 
-	fetchVASTURLs: function(streamData, vmapData) {
-		var deferred = Q.defer();
+	
 
-		deferred.resolve(streamData);
 
-		// parseXML(vmapData, function (err, result) {
-    // 	if (err) {
-		// 		deferred.reject(err);
-		// 	} else {
-		// 		deferred.resolve(result);
-		// 	}
-		// });
-
-		return deferred.promise;
-	}
 
 };
