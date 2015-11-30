@@ -15,3 +15,14 @@ https://devimages.apple.com.edgekey.net/streaming/examples/bipbop_16x9/gear4/pro
 
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=41457,CODECS="mp4a.40.2"
 https://devimages.apple.com.edgekey.net/streaming/examples/bipbop_16x9/gear0/prog_index.m3u8
+
+1927833 -> 398
+1280x720
+
+649879 -> 115
+640x360
+
+
+
+398       115
+1927833   649879

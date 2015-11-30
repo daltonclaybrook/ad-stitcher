@@ -4,6 +4,18 @@
 * Fetch/parse VMAP/VAST files
 */
 
+/*
+{
+  preroll: {
+    media: [{
+      
+    }]
+  },
+  midrolls: [],
+  postroll: {}
+}
+*/
+
 var Q = require('q');
 var parseXML = require('xml2js').parseString;
 
