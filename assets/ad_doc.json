@@ -1,0 +1,112 @@
+{
+  "preroll": {
+    "pod": [
+      {
+        "duration": 10,
+        "media": [
+          {
+            "bitrate": 398000,
+            "source": "https://redirector.gvt1.com/videoplayback/id/5bad011a1282b323/itag/15/source/gfp_video_ads/requiressl/yes/ip/0.0.0.0/ipbits/0/expire/1449892651/sparams/ip,ipbits,expire,id,itag,source,requiressl/signature/2C7273C29BF31DDD5C33B6DDB240FB1EF97F52E7.20DFDA9187E8452C1B7E1A102D6A22224F961F36/key/ck2/file/file.mp4"
+          },
+          {
+            "bitrate": 115000,
+            "source": "https://redirector.gvt1.com/videoplayback/id/5bad011a1282b323/itag/18/source/gfp_video_ads/requiressl/yes/ip/0.0.0.0/ipbits/0/expire/1449892651/sparams/ip,ipbits,expire,id,itag,source,requiressl/signature/B68C352897880E1DC8839AA7F246B24071A3777B.3022522D05047D3A5C9C49B744328BDDD9F6DD50/key/ck2/file/file.mp4"
+          },
+          {
+            "bitrate": 232000,
+            "source": "https://redirector.gvt1.com/videoplayback/id/5bad011a1282b323/itag/22/source/gfp_video_ads/requiressl/yes/ip/0.0.0.0/ipbits/0/expire/1449892651/sparams/ip,ipbits,expire,id,itag,source,requiressl/signature/B0899480286BB82FC44155A786B52E453B228B50.38CEF3C756A4778B96F04CE20F5F49C8B9D595DB/key/ck2/file/file.mp4"
+          }
+        ]
+      }
+    ]
+  },
+  "midrolls": [
+    {
+      "time": 15,
+      "pod": [
+        {
+          "duration": 10,
+          "media": [
+            {
+              "bitrate": 410000,
+              "source": "https://redirector.gvt1.com/videoplayback/id/240e9a8fa1c2d3f6/itag/15/source/gfp_video_ads/requiressl/yes/ip/0.0.0.0/ipbits/0/expire/1449892651/sparams/ip,ipbits,expire,id,itag,source,requiressl/signature/9168454E31800BE926D854BCAA26C159A230A95D.6BA3B5D6A7E71439238F8E3277ACF2B3EBF07CA6/key/ck2/file/file.mp4"
+            },
+            {
+              "bitrate": 234000,
+              "source": "https://redirector.gvt1.com/videoplayback/id/240e9a8fa1c2d3f6/itag/22/source/gfp_video_ads/requiressl/yes/ip/0.0.0.0/ipbits/0/expire/1449892651/sparams/ip,ipbits,expire,id,itag,source,requiressl/signature/8AD9219E15159C3B1B848D0034AF770CCB98379A.AFC89F79D13A4C360FCF438F10701F99A0FE13F9/key/ck2/file/file.mp4"
+            },
+            {
+              "bitrate": 116000,
+              "source": "https://redirector.gvt1.com/videoplayback/id/240e9a8fa1c2d3f6/itag/18/source/gfp_video_ads/requiressl/yes/ip/0.0.0.0/ipbits/0/expire/1449892651/sparams/ip,ipbits,expire,id,itag,source,requiressl/signature/567B40562CD5009BFD5AACB23A12711871A7096D.9524E9E396D879AA3D6AC7695627FF727B1B556C/key/ck2/file/file.mp4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "time": 15,
+      "pod": [
+        {
+          "duration": 10,
+          "media": [
+            {
+              "bitrate": 410000,
+              "source": "https://redirector.gvt1.com/videoplayback/id/240e9a8fa1c2d3f6/itag/15/source/gfp_video_ads/requiressl/yes/ip/0.0.0.0/ipbits/0/expire/1449892651/sparams/ip,ipbits,expire,id,itag,source,requiressl/signature/2BDBAE3DAF8276AE56D520E52DCA0DF388B54F7A.0BD62DC46D1B0AFC87D0FE96B1B2BD1AD9EC1B3B/key/ck2/file/file.mp4"
+            },
+            {
+              "bitrate": 234000,
+              "source": "https://redirector.gvt1.com/videoplayback/id/240e9a8fa1c2d3f6/itag/22/source/gfp_video_ads/requiressl/yes/ip/0.0.0.0/ipbits/0/expire/1449892651/sparams/ip,ipbits,expire,id,itag,source,requiressl/signature/9707F2A18144A63282C776E029F8C76A85482872.2A590F70470D0E0982AB6C745427AA6E365F4A40/key/ck2/file/file.mp4"
+            },
+            {
+              "bitrate": 116000,
+              "source": "https://redirector.gvt1.com/videoplayback/id/240e9a8fa1c2d3f6/itag/18/source/gfp_video_ads/requiressl/yes/ip/0.0.0.0/ipbits/0/expire/1449892651/sparams/ip,ipbits,expire,id,itag,source,requiressl/signature/413A704E60C7EA840942592C6CF29E9F5E10FD31.28BC10CD89F3CEB370AB1858170965823C642A79/key/ck2/file/file.mp4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "time": 15,
+      "pod": [
+        {
+          "duration": 10,
+          "media": [
+            {
+              "bitrate": 410000,
+              "source": "https://redirector.gvt1.com/videoplayback/id/240e9a8fa1c2d3f6/itag/15/source/gfp_video_ads/requiressl/yes/ip/0.0.0.0/ipbits/0/expire/1449892651/sparams/ip,ipbits,expire,id,itag,source,requiressl/signature/3D87D99EEDB622DD489F960E806A81A7B609F5A8.4AE52AFF5F5093334B2EABF23586587A1FB139FC/key/ck2/file/file.mp4"
+            },
+            {
+              "bitrate": 234000,
+              "source": "https://redirector.gvt1.com/videoplayback/id/240e9a8fa1c2d3f6/itag/22/source/gfp_video_ads/requiressl/yes/ip/0.0.0.0/ipbits/0/expire/1449892651/sparams/ip,ipbits,expire,id,itag,source,requiressl/signature/B073FC687B0ED12EAAE016B3A372A990E27447E2.2647DAB7F5BA7BC62871F07FE72BE0EAD728ADE6/key/ck2/file/file.mp4"
+            },
+            {
+              "bitrate": 116000,
+              "source": "https://redirector.gvt1.com/videoplayback/id/240e9a8fa1c2d3f6/itag/18/source/gfp_video_ads/requiressl/yes/ip/0.0.0.0/ipbits/0/expire/1449892651/sparams/ip,ipbits,expire,id,itag,source,requiressl/signature/57077B84433E3E0993F463F3F242DA131B1F2D0B.7C9E04DFBC7C2B2AC88C36DB7483B5B96930FBD1/key/ck2/file/file.mp4"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "postroll": {
+    "pod": [
+      {
+        "duration": 10,
+        "media": [
+          {
+            "bitrate": 423000,
+            "source": "https://redirector.gvt1.com/videoplayback/id/f4890b9f60d85691/itag/15/source/gfp_video_ads/requiressl/yes/ip/0.0.0.0/ipbits/0/expire/1449892651/sparams/ip,ipbits,expire,id,itag,source,requiressl/signature/44304DF6FEA91BF69F4B5AA6D2F2EF50065280D6.51288B1426460D95C265A6BE6753E110056AF5B5/key/ck2/file/file.mp4"
+          },
+          {
+            "bitrate": 236000,
+            "source": "https://redirector.gvt1.com/videoplayback/id/f4890b9f60d85691/itag/22/source/gfp_video_ads/requiressl/yes/ip/0.0.0.0/ipbits/0/expire/1449892651/sparams/ip,ipbits,expire,id,itag,source,requiressl/signature/7F9B0E31E1AE2DF0358F48705990346D6189B303.0A2B124A6BEA16C428F9B00872E1887AD66FA63A/key/ck2/file/file.mp4"
+          },
+          {
+            "bitrate": 116000,
+            "source": "https://redirector.gvt1.com/videoplayback/id/f4890b9f60d85691/itag/18/source/gfp_video_ads/requiressl/yes/ip/0.0.0.0/ipbits/0/expire/1449892651/sparams/ip,ipbits,expire,id,itag,source,requiressl/signature/6191AE04C5206708CD32D5511BB106479B451EC2.728E8046284C1BFB1CA39ACB203107D9F0F33EC5/key/ck2/file/file.mp4"
+          }
+        ]
+      }
+    ]
+  }
+}

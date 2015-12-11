@@ -75,8 +75,75 @@ var self = module.exports = {
   insertAds: function(context) {
     return Q.fcall(function() {
 
+      var playlist = context.playlist;
+      var bandwidth = context.bandwidth;
+      var ads = context.ads;
 
+      var midrolls = ads.midrolls;
+      var midrollIdx = 0;
 
+      var items = playlist.items.PlaylistItem;
+      var counter = 0.0;
+
+      // insert midrolls
+      for (var i = 0; i < items.length; i++) {
+        if (midrolls.length > midrollIdx) {
+          var item = items[i];
+          var midroll = midrolls[midrollIdx];
+          if (midroll.time <= counter) {
+            var j=i;
+            midroll.pod.forEach(function(slot) {
+              var media = self.mediaFromSlot(slot, bandwidth);
+              var newItem = {
+                discontinuity: true,
+                duration: slot.duration,
+                uri: media.source
+              };
+              items[j] = newItem;
+              j++;
+            });
+
+            // increment the counter minus 1 since the next loop will add 1 more.
+            i += (midroll.pod.length-1)
+            midrollIdx++;
+          }
+          counter += item.duration;
+        } else {
+          break;
+        }
+      }
+
+      // preroll
+      if (ads.preroll) {
+        var j = 0;
+        ads.preroll.pod.forEach(function(slot) {
+          var media = self.mediaFromSlot(slot, bandwidth);
+          var newItem = {
+            discontinuity: true,
+            duration: slot.duration,
+            uri: media.source
+          };
+          items[j] = newItem;
+          j++
+        });
+      }
+
+      // postroll
+      if (ads.postroll) {
+        var j = items.length;
+        ads.postroll.pod.forEach(function(slot) {
+          var media = self.mediaFromSlot(slot, bandwidth);
+          var newItem = {
+            discontinuity: true,
+            duration: slot.duration,
+            uri: media.source
+          };
+          items[j] = newItem;
+          j++
+        });
+      }
+
+      return context;
     });
   },
 
@@ -94,6 +161,12 @@ var self = module.exports = {
     var urlEncodedBandwidth = encodeURIComponent(bandwidth);
 
     return 'media?master=' + urlEncodedMaster + '&uri=' + urlEncodedURI + '&vmap=' + urlEncodedVMAP + '&bandwidth=' + urlEncodedBandwidth;
+  },
+
+  mediaFromSlot: function(slot, bandwidth) {
+
+
+
   }
 
 };

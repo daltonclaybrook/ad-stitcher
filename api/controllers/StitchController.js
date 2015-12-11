@@ -6,7 +6,6 @@
  */
 
 var Q = require('q');
-var parseXML = require('xml2js').parseString;
 
 var self = module.exports = {
 
@@ -48,11 +47,19 @@ var self = module.exports = {
 		components[components.length-1] = uri;
 		var playlistURL = components.join('/');
 
+		sails.log.verbose(playlistURL + '\n' + uri + '\n' + vmapURL + '\n' + bandwidth + '\n\n');
+
 		Q.all([
 			Playlist.fetchPlaylist({ url: playlistURL }),
-			self.fetchXML({ url: vmapURL })
+			AdService.loadAdsFromVMAP({ url: vmapURL })
 		])
-		.spread(self.fetchVASTURLs)
+		.spread(function(playlistContext, adContext) {
+			return {
+				playlist: playlistContext.playlist,
+				ads: adContext.ads,
+				bandwidth: Number(bandwidth)
+			};
+		})
 		.then(Playlist.insertAds)
 		.done(function success(context) {
 
@@ -60,15 +67,13 @@ var self = module.exports = {
 
 		});
 
-		sails.log.verbose('\n\nstich media with master: ' + master + '\nURI: ' + uri + '\nVMAP: ' + vmapURL + '\n\n');
-
 	},
 
 	/**
 	*	Helper methods
 	*/
 
-	
+
 
 
 
