@@ -94,12 +94,7 @@ var self = module.exports = {
             var j=i;
             midroll.pod.forEach(function(slot) {
               var media = self.mediaFromSlot(slot, bandwidth);
-              var newItem = {
-                discontinuity: true,
-                duration: slot.duration,
-                uri: media.source
-              };
-              items[j] = newItem;
+              items[j] = self.createPlaylistItem(slot.duration, media.source);
               j++;
             });
 
@@ -118,12 +113,7 @@ var self = module.exports = {
         var j = 0;
         ads.preroll.pod.forEach(function(slot) {
           var media = self.mediaFromSlot(slot, bandwidth);
-          var newItem = {
-            discontinuity: true,
-            duration: slot.duration,
-            uri: media.source
-          };
-          items[j] = newItem;
+          items[j] = self.createPlaylistItem(slot.duration, media.source);
           j++
         });
       }
@@ -133,16 +123,12 @@ var self = module.exports = {
         var j = items.length;
         ads.postroll.pod.forEach(function(slot) {
           var media = self.mediaFromSlot(slot, bandwidth);
-          var newItem = {
-            discontinuity: true,
-            duration: slot.duration,
-            uri: media.source
-          };
-          items[j] = newItem;
+          items[j] = self.createPlaylistItem(slot.duration, media.source);
           j++
         });
       }
 
+      sails.log.verbose('items:\n\n' + JSON.stringify(items, null, 2));
       return context;
     });
   },
@@ -165,8 +151,30 @@ var self = module.exports = {
 
   mediaFromSlot: function(slot, bandwidth) {
 
+    var media = null;
+    slot.media.forEach(function(file) {
+      if (!media) {
+        // if media is null
+        media = file;
+      } else if ((media.bitrate > bandwidth) && (file.bitrate < media.bitrate)) {
+        // if the current media has a higher bitrate than the bandwidth and the new media has a lower bitrate than the current media, even if it is still higher than bandwidth
+        media = file;
+      } else if ((file.bitrate > media.bitrate) && (file.bitrate < bandwidth)) {
+        // if the new media has a higher bitrate than the current media, but is still less than bandwidth
+        media = file;
+      }
+    });
+    return media;
 
+  },
 
+  createPlaylistItem: function(duration, uri) {
+
+    return m3u8.M3U.PlaylistItem.create({
+      discontinuity: true,
+      duration: duration,
+      uri: uri
+    });
   }
 
 };

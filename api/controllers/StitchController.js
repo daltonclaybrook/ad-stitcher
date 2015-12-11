@@ -61,10 +61,11 @@ var self = module.exports = {
 			};
 		})
 		.then(Playlist.insertAds)
+		.then(Playlist.exportString)
 		.done(function success(context) {
-
+			res.playlist(context.playlistString);
 		}, function error(context) {
-
+			Responder.sendResponse(res, context);
 		});
 
 	},
