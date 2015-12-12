@@ -13,6 +13,8 @@ var self = module.exports = {
   fetchPlaylist: function(context) {
     var deferred = Q.defer();
 
+    sails.log.verbose('fetching playlist');
+
     https.get(context.url, function(res) {
   		if (res.statusCode == 200) {
         var parser = m3u8.createStream();
@@ -67,6 +69,8 @@ var self = module.exports = {
   exportString: function(context) {
     return Q.fcall(function() {
 
+      sails.log.verbose('exporting string');
+
       context.playlistString = context.playlist.toString();
       return context;
     });
@@ -74,6 +78,8 @@ var self = module.exports = {
 
   makeAbsoluteSegmentPaths: function(context) {
     return Q.fcall(function() {
+
+      sails.log.verbose('making absolute paths');
 
       var url = context.playlistURL;
       var playlist = context.playlist;
@@ -93,6 +99,8 @@ var self = module.exports = {
 
   insertAds: function(context) {
     return Q.fcall(function() {
+
+      sails.log.verbose('inserting ads');
 
       var playlist = context.playlist;
       var bandwidth = context.bandwidth;
