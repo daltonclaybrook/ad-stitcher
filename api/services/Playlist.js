@@ -102,7 +102,7 @@ var self = module.exports = {
             i += (midroll.pod.length-1)
             midrollIdx++;
           }
-          counter += item.duration;
+          counter += item.get('duration');
         } else {
           break;
         }
@@ -114,7 +114,7 @@ var self = module.exports = {
         ads.preroll.pod.forEach(function(slot) {
           var media = self.mediaFromSlot(slot, bandwidth);
           items[j] = self.createPlaylistItem(slot.duration, media.source);
-          j++
+          j++;
         });
       }
 
@@ -124,11 +124,10 @@ var self = module.exports = {
         ads.postroll.pod.forEach(function(slot) {
           var media = self.mediaFromSlot(slot, bandwidth);
           items[j] = self.createPlaylistItem(slot.duration, media.source);
-          j++
+          j++;
         });
       }
 
-      sails.log.verbose('items:\n\n' + JSON.stringify(items, null, 2));
       return context;
     });
   },
