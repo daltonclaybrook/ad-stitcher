@@ -13,7 +13,8 @@ module.exports = function sendOK (data, options) {
 
   // Set status code
   res.status(200);
-  res.set('Content-Type', 'application/x-mpegURL');
-  res.send(data)
+  // res.setHeader('content-type', 'application/x-mpegURL')
+  res.type('application/x-mpegURL');
+  res.send(new Buffer(data))
 
 };
