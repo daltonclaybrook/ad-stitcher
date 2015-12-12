@@ -24,6 +24,7 @@ module.exports.log = {
   *                                                                          *
   ***************************************************************************/
 
-  level: 'verbose'
+  // level: 'verbose'
+  level: 'info'
 
 };

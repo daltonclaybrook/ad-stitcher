@@ -121,12 +121,14 @@ var self = module.exports = {
             var j=i;
             midroll.pod.forEach(function(slot) {
               var media = self.mediaFromSlot(slot, bandwidth);
-              items[j] = self.createPlaylistItem(slot.duration, media.source);
-              j++;
+              if (media) {
+                items[j] = self.createPlaylistItem(slot.duration, media.source);
+                j++;
+              }
             });
 
             // increment the counter minus 1 since the next loop will add 1 more.
-            i += (midroll.pod.length-1)
+            i += (j-i-1)
             midrollIdx++;
           }
           counter += item.get('duration');
@@ -140,8 +142,10 @@ var self = module.exports = {
         var j = 0;
         ads.preroll.pod.forEach(function(slot) {
           var media = self.mediaFromSlot(slot, bandwidth);
-          items[j] = self.createPlaylistItem(slot.duration, media.source);
-          j++;
+          if (media) {
+            items[j] = self.createPlaylistItem(slot.duration, media.source);
+            j++;
+          }
         });
       }
 
@@ -150,8 +154,10 @@ var self = module.exports = {
         var j = items.length;
         ads.postroll.pod.forEach(function(slot) {
           var media = self.mediaFromSlot(slot, bandwidth);
-          items[j] = self.createPlaylistItem(slot.duration, media.source);
-          j++;
+          if (media) {
+            items[j] = self.createPlaylistItem(slot.duration, media.source);
+            j++;
+          }
         });
       }
 
@@ -177,19 +183,29 @@ var self = module.exports = {
 
   mediaFromSlot: function(slot, bandwidth) {
 
+    var multiplier = 4.8;
     var media = null;
+
     slot.media.forEach(function(file) {
       if (!media) {
         // if media is null
         media = file;
-      } else if ((media.bitrate > bandwidth) && (file.bitrate < media.bitrate)) {
+      } else if ((media.bitrate*multiplier > bandwidth) && (file.bitrate < media.bitrate)) {
         // if the current media has a higher bitrate than the bandwidth and the new media has a lower bitrate than the current media, even if it is still higher than bandwidth
         media = file;
-      } else if ((file.bitrate > media.bitrate) && (file.bitrate < bandwidth)) {
+      } else if ((file.bitrate > media.bitrate) && (file.bitrate*multiplier < bandwidth)) {
         // if the new media has a higher bitrate than the current media, but is still less than bandwidth
         media = file;
       }
     });
+
+    if (media.bitrate*multiplier > bandwidth) {
+      media = null;
+      sails.log.info('no suitable bandwidth');
+    } else {
+      sails.log.info('\ntarget: ' + bandwidth + '\nactual: ' + media.bitrate);
+    }
+
     return media;
 
   },
@@ -204,14 +220,3 @@ var self = module.exports = {
   }
 
 };
-
-// var context = {
-//   // url: 'https://devimages.apple.com.edgekey.net/streaming/examples/bipbop_4x3/bipbop_4x3_variant.m3u8'
-//   url: 'https://www.google.com/'
-// };
-// self.fetchPlaylist(context)
-// .done(function(context) {
-//   console.log('success: ' + JSON.stringify(context, null, 2));
-// }, function(context) {
-//   console.log('failure: ' + JSON.stringify(context, null, 2));
-// });
