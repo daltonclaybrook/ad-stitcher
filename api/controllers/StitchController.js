@@ -55,11 +55,13 @@ var self = module.exports = {
 		])
 		.spread(function(playlistContext, adContext) {
 			return {
+				playlistURL: playlistURL,
 				playlist: playlistContext.playlist,
 				ads: adContext.ads,
 				bandwidth: Number(bandwidth)
 			};
 		})
+		.then(Playlist.makeAbsoluteSegmentPaths)
 		.then(Playlist.insertAds)
 		.then(Playlist.exportString)
 		.done(function success(context) {

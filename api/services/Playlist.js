@@ -72,6 +72,25 @@ var self = module.exports = {
     });
   },
 
+  makeAbsoluteSegmentPaths: function(context) {
+    return Q.fcall(function() {
+
+      var url = context.playlistURL;
+      var playlist = context.playlist;
+      var items = playlist.items.PlaylistItem;
+
+      items.forEach(function(item) {
+        var uri = item.get('uri');
+        var components = url.split('/');
+    		components[components.length-1] = uri;
+    		var absolutePath = components.join('/');
+        item.set('uri', absolutePath);
+      });
+
+      return context;
+    });
+  },
+
   insertAds: function(context) {
     return Q.fcall(function() {
 
