@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VAST xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="vast.xsd" version="3.0">
+ <Ad id="710742376">
+  <InLine>
+   <AdSystem>GDFP</AdSystem>
+   <AdTitle>External NCA1C1L4 Midroll</AdTitle>
+   <Description><![CDATA[External NCA1C1L4 Midroll ad]]></Description>
+   <Error><![CDATA[https://pubads.g.doubleclick.net/pagead/conversion/?ai=BWOAp9XJrVsG1Fcz7hASgvbngDtCvj-sGAAAAEAEgqN27JjgAWNC9r8bXAWDJxoSN5KTAE7oBCjcyOHg5MF94bWzIAQXAAgLgAgDqAiMvMTI0MzE5MDk2L2V4dGVybmFsL2FkX3J1bGVfc2FtcGxlc_gC8tEegAMBkAPoApgD8AGoAwHgBAGQBgGgBiPYBwE&sigh=bugfc65B5As&label=videoplayfailed[ERRORCODE]]]></Error>
+   <Impression><![CDATA[https://pubads.g.doubleclick.net/pagead/adview?ai=BWOAp9XJrVsG1Fcz7hASgvbngDtCvj-sGAAAAEAEgqN27JjgAWNC9r8bXAWDJxoSN5KTAE7oBCjcyOHg5MF94bWzIAQXAAgLgAgDqAiMvMTI0MzE5MDk2L2V4dGVybmFsL2FkX3J1bGVfc2FtcGxlc_gC8tEegAMBkAPoApgD8AGoAwHgBAGQBgGgBiPYBwE&sigh=THdKHTM00cM&cid=5GhNfXJ4MoNRHjLjDpSlvb9e]]></Impression>
+   <Creatives>
+    <Creative id="57861201616" sequence="1">
+     <Linear>
+      <Duration>00:00:10</Duration>
+      <TrackingEvents>
+       <Tracking event="start"><![CDATA[https://pubads.g.doubleclick.net/pagead/conversion/?ai=BWOAp9XJrVsG1Fcz7hASgvbngDtCvj-sGAAAAEAEgqN27JjgAWNC9r8bXAWDJxoSN5KTAE7oBCjcyOHg5MF94bWzIAQXAAgLgAgDqAiMvMTI0MzE5MDk2L2V4dGVybmFsL2FkX3J1bGVfc2FtcGxlc_gC8tEegAMBkAPoApgD8AGoAwHgBAGQBgGgBiPYBwE&sigh=bugfc65B5As&label=part2viewed]]></Tracking>
+       <Tracking event="firstQuartile"><![CDATA[https://pubads.g.doubleclick.net/pagead/conversion/?ai=BWOAp9XJrVsG1Fcz7hASgvbngDtCvj-sGAAAAEAEgqN27JjgAWNC9r8bXAWDJxoSN5KTAE7oBCjcyOHg5MF94bWzIAQXAAgLgAgDqAiMvMTI0MzE5MDk2L2V4dGVybmFsL2FkX3J1bGVfc2FtcGxlc_gC8tEegAMBkAPoApgD8AGoAwHgBAGQBgGgBiPYBwE&sigh=bugfc65B5As&label=videoplaytime25]]></Tracking>
+       <Tracking event="midpoint"><![CDATA[https://pubads.g.doubleclick.net/pagead/conversion/?ai=BWOAp9XJrVsG1Fcz7hASgvbngDtCvj-sGAAAAEAEgqN27JjgAWNC9r8bXAWDJxoSN5KTAE7oBCjcyOHg5MF94bWzIAQXAAgLgAgDqAiMvMTI0MzE5MDk2L2V4dGVybmFsL2FkX3J1bGVfc2FtcGxlc_gC8tEegAMBkAPoApgD8AGoAwHgBAGQBgGgBiPYBwE&sigh=bugfc65B5As&label=videoplaytime50]]></Tracking>
+       <Tracking event="thirdQuartile"><![CDATA[https://pubads.g.doubleclick.net/pagead/conversion/?ai=BWOAp9XJrVsG1Fcz7hASgvbngDtCvj-sGAAAAEAEgqN27JjgAWNC9r8bXAWDJxoSN5KTAE7oBCjcyOHg5MF94bWzIAQXAAgLgAgDqAiMvMTI0MzE5MDk2L2V4dGVybmFsL2FkX3J1bGVfc2FtcGxlc_gC8tEegAMBkAPoApgD8AGoAwHgBAGQBgGgBiPYBwE&sigh=bugfc65B5As&label=videoplaytime75]]></Tracking>
+       <Tracking event="complete"><![CDATA[https://pubads.g.doubleclick.net/pagead/conversion/?ai=BWOAp9XJrVsG1Fcz7hASgvbngDtCvj-sGAAAAEAEgqN27JjgAWNC9r8bXAWDJxoSN5KTAE7oBCjcyOHg5MF94bWzIAQXAAgLgAgDqAiMvMTI0MzE5MDk2L2V4dGVybmFsL2FkX3J1bGVfc2FtcGxlc_gC8tEegAMBkAPoApgD8AGoAwHgBAGQBgGgBiPYBwE&sigh=bugfc65B5As&label=videoplaytime100]]></Tracking>
+       <Tracking event="mute"><![CDATA[https://pubads.g.doubleclick.net/pagead/conversion/?ai=BWOAp9XJrVsG1Fcz7hASgvbngDtCvj-sGAAAAEAEgqN27JjgAWNC9r8bXAWDJxoSN5KTAE7oBCjcyOHg5MF94bWzIAQXAAgLgAgDqAiMvMTI0MzE5MDk2L2V4dGVybmFsL2FkX3J1bGVfc2FtcGxlc_gC8tEegAMBkAPoApgD8AGoAwHgBAGQBgGgBiPYBwE&sigh=bugfc65B5As&label=admute]]></Tracking>
+       <Tracking event="unmute"><![CDATA[https://pubads.g.doubleclick.net/pagead/conversion/?ai=BWOAp9XJrVsG1Fcz7hASgvbngDtCvj-sGAAAAEAEgqN27JjgAWNC9r8bXAWDJxoSN5KTAE7oBCjcyOHg5MF94bWzIAQXAAgLgAgDqAiMvMTI0MzE5MDk2L2V4dGVybmFsL2FkX3J1bGVfc2FtcGxlc_gC8tEegAMBkAPoApgD8AGoAwHgBAGQBgGgBiPYBwE&sigh=bugfc65B5As&label=adunmute]]></Tracking>
+       <Tracking event="rewind"><![CDATA[https://pubads.g.doubleclick.net/pagead/conversion/?ai=BWOAp9XJrVsG1Fcz7hASgvbngDtCvj-sGAAAAEAEgqN27JjgAWNC9r8bXAWDJxoSN5KTAE7oBCjcyOHg5MF94bWzIAQXAAgLgAgDqAiMvMTI0MzE5MDk2L2V4dGVybmFsL2FkX3J1bGVfc2FtcGxlc_gC8tEegAMBkAPoApgD8AGoAwHgBAGQBgGgBiPYBwE&sigh=bugfc65B5As&label=adrewind]]></Tracking>
+       <Tracking event="pause"><![CDATA[https://pubads.g.doubleclick.net/pagead/conversion/?ai=BWOAp9XJrVsG1Fcz7hASgvbngDtCvj-sGAAAAEAEgqN27JjgAWNC9r8bXAWDJxoSN5KTAE7oBCjcyOHg5MF94bWzIAQXAAgLgAgDqAiMvMTI0MzE5MDk2L2V4dGVybmFsL2FkX3J1bGVfc2FtcGxlc_gC8tEegAMBkAPoApgD8AGoAwHgBAGQBgGgBiPYBwE&sigh=bugfc65B5As&label=adpause]]></Tracking>
+       <Tracking event="resume"><![CDATA[https://pubads.g.doubleclick.net/pagead/conversion/?ai=BWOAp9XJrVsG1Fcz7hASgvbngDtCvj-sGAAAAEAEgqN27JjgAWNC9r8bXAWDJxoSN5KTAE7oBCjcyOHg5MF94bWzIAQXAAgLgAgDqAiMvMTI0MzE5MDk2L2V4dGVybmFsL2FkX3J1bGVfc2FtcGxlc_gC8tEegAMBkAPoApgD8AGoAwHgBAGQBgGgBiPYBwE&sigh=bugfc65B5As&label=adresume]]></Tracking>
+       <Tracking event="fullscreen"><![CDATA[https://pubads.g.doubleclick.net/pagead/conversion/?ai=BWOAp9XJrVsG1Fcz7hASgvbngDtCvj-sGAAAAEAEgqN27JjgAWNC9r8bXAWDJxoSN5KTAE7oBCjcyOHg5MF94bWzIAQXAAgLgAgDqAiMvMTI0MzE5MDk2L2V4dGVybmFsL2FkX3J1bGVfc2FtcGxlc_gC8tEegAMBkAPoApgD8AGoAwHgBAGQBgGgBiPYBwE&sigh=bugfc65B5As&label=adfullscreen]]></Tracking>
+       <Tracking event="creativeView"><![CDATA[https://pubads.g.doubleclick.net/pagead/conversion/?ai=BWOAp9XJrVsG1Fcz7hASgvbngDtCvj-sGAAAAEAEgqN27JjgAWNC9r8bXAWDJxoSN5KTAE7oBCjcyOHg5MF94bWzIAQXAAgLgAgDqAiMvMTI0MzE5MDk2L2V4dGVybmFsL2FkX3J1bGVfc2FtcGxlc_gC8tEegAMBkAPoApgD8AGoAwHgBAGQBgGgBiPYBwE&sigh=bugfc65B5As&label=vast_creativeview]]></Tracking>
+       <Tracking event="exitFullscreen"><![CDATA[https://pubads.g.doubleclick.net/pagead/conversion/?ai=BWOAp9XJrVsG1Fcz7hASgvbngDtCvj-sGAAAAEAEgqN27JjgAWNC9r8bXAWDJxoSN5KTAE7oBCjcyOHg5MF94bWzIAQXAAgLgAgDqAiMvMTI0MzE5MDk2L2V4dGVybmFsL2FkX3J1bGVfc2FtcGxlc_gC8tEegAMBkAPoApgD8AGoAwHgBAGQBgGgBiPYBwE&sigh=bugfc65B5As&label=vast_exit_fullscreen]]></Tracking>
+       <Tracking event="acceptInvitationLinear"><![CDATA[https://pubads.g.doubleclick.net/pagead/conversion/?ai=BWOAp9XJrVsG1Fcz7hASgvbngDtCvj-sGAAAAEAEgqN27JjgAWNC9r8bXAWDJxoSN5KTAE7oBCjcyOHg5MF94bWzIAQXAAgLgAgDqAiMvMTI0MzE5MDk2L2V4dGVybmFsL2FkX3J1bGVfc2FtcGxlc_gC8tEegAMBkAPoApgD8AGoAwHgBAGQBgGgBiPYBwE&sigh=bugfc65B5As&label=acceptinvitation]]></Tracking>
+       <Tracking event="closeLinear"><![CDATA[https://pubads.g.doubleclick.net/pagead/conversion/?ai=BWOAp9XJrVsG1Fcz7hASgvbngDtCvj-sGAAAAEAEgqN27JjgAWNC9r8bXAWDJxoSN5KTAE7oBCjcyOHg5MF94bWzIAQXAAgLgAgDqAiMvMTI0MzE5MDk2L2V4dGVybmFsL2FkX3J1bGVfc2FtcGxlc_gC8tEegAMBkAPoApgD8AGoAwHgBAGQBgGgBiPYBwE&sigh=bugfc65B5As&label=adclose]]></Tracking>
+       <Tracking event="start"><![CDATA[https://video-ad-stats.googlesyndication.com/video/client_events?event=2&web_property=ca-pub-3279133228669082&cpn=[CPN]&break_type=[BREAK_TYPE]&slot_pos=[SLOT_POS]&ad_id=[AD_ID]&ad_sys=[AD_SYS]&ad_len=[AD_LEN]&p_w=[P_W]&p_h=[P_H]&mt=[MT]&rwt=[RWT]&wt=[WT]&sdkv=[SDKV]&vol=[VOL]&content_v=[CONTENT_V]&conn=[CONN]&format=[FORMAT_NAMESPACE]_[FORMAT_TYPE]_[FORMAT_SUBTYPE]]]></Tracking>
+       <Tracking event="complete"><![CDATA[https://video-ad-stats.googlesyndication.com/video/client_events?event=3&web_property=ca-pub-3279133228669082&cpn=[CPN]&break_type=[BREAK_TYPE]&slot_pos=[SLOT_POS]&ad_id=[AD_ID]&ad_sys=[AD_SYS]&ad_len=[AD_LEN]&p_w=[P_W]&p_h=[P_H]&mt=[MT]&rwt=[RWT]&wt=[WT]&sdkv=[SDKV]&vol=[VOL]&content_v=[CONTENT_V]&conn=[CONN]&format=[FORMAT_NAMESPACE]_[FORMAT_TYPE]_[FORMAT_SUBTYPE]]]></Tracking>
+      </TrackingEvents>
+      <VideoClicks>
+       <ClickThrough id="GDFP"><![CDATA[https://pubads.g.doubleclick.net/aclk?sa=L&ai=BWOAp9XJrVsG1Fcz7hASgvbngDtCvj-sGAAAAEAEgqN27JjgAWNC9r8bXAWDJxoSN5KTAE7oBCjcyOHg5MF94bWzIAQXAAgLgAgDqAiMvMTI0MzE5MDk2L2V4dGVybmFsL2FkX3J1bGVfc2FtcGxlc_gC8tEegAMBkAPoApgD8AGoAwHgBAGQBgGgBiPYBwE&num=0&cid=5GhNfXJ4MoNRHjLjDpSlvb9e&sig=AOD64_1wUJgyoBbilOuAihvxlMQUyA_sJg&client=ca-pub-3279133228669082&adurl=https://developers.google.com/interactive-media-ads/docs/vastinspector_dual]]></ClickThrough>
+       <ClickTracking id=""><![CDATA[https://video-ad-stats.googlesyndication.com/video/client_events?event=6&web_property=ca-pub-3279133228669082&cpn=[CPN]&break_type=[BREAK_TYPE]&slot_pos=[SLOT_POS]&ad_id=[AD_ID]&ad_sys=[AD_SYS]&ad_len=[AD_LEN]&p_w=[P_W]&p_h=[P_H]&mt=[MT]&rwt=[RWT]&wt=[WT]&sdkv=[SDKV]&vol=[VOL]&content_v=[CONTENT_V]&conn=[CONN]&format=[FORMAT_NAMESPACE]_[FORMAT_TYPE]_[FORMAT_SUBTYPE]]]></ClickTracking>
+      </VideoClicks>
+      <MediaFiles>
+       <MediaFile id="GDFP" delivery="progressive" width="1280" height="720" type="video/mp4" bitrate="410" scalable="true" maintainAspectRatio="true"><![CDATA[https://redirector.gvt1.com/videoplayback/id/240e9a8fa1c2d3f6/itag/15/source/gfp_video_ads/requiressl/yes/ip/0.0.0.0/ipbits/0/expire/1449903957/sparams/ip,ipbits,expire,id,itag,source,requiressl/signature/50E31EE4CA39BBB6F9AE49E3DFFE80C68AE4811C.5FE7819DC51DECADF593DA1003B1513998A5DCED/key/ck2/file/file.mp4]]></MediaFile>
+       <MediaFile id="GDFP" delivery="progressive" width="176" height="144" type="video/3gpp" bitrate="34" scalable="true" maintainAspectRatio="true"><![CDATA[https://redirector.gvt1.com/videoplayback/id/240e9a8fa1c2d3f6/itag/17/source/gfp_video_ads/requiressl/yes/ip/0.0.0.0/ipbits/0/expire/1449903957/sparams/ip,ipbits,expire,id,itag,source,requiressl/signature/911830C7E5A8EEF422BD68BA93E8DB0359A706E7.2BEC756E64DEFD7261F81ED3C43B63C1C507AD1F/key/ck2/file/file.3gp]]></MediaFile>
+       <MediaFile id="GDFP" delivery="progressive" width="320" height="180" type="video/3gpp" bitrate="65" scalable="true" maintainAspectRatio="true"><![CDATA[https://redirector.gvt1.com/videoplayback/id/240e9a8fa1c2d3f6/itag/36/source/gfp_video_ads/requiressl/yes/ip/0.0.0.0/ipbits/0/expire/1449903957/sparams/ip,ipbits,expire,id,itag,source,requiressl/signature/73AE192CD7D26FEBAF7AFB5CE771C407D1E38835.673E57063BCED42AA7EB796911F0B3D31297D1E5/key/ck2/file/file.3gp]]></MediaFile>
+       <MediaFile id="GDFP" delivery="progressive" width="854" height="480" type="video/webm" bitrate="128" scalable="true" maintainAspectRatio="true"><![CDATA[https://redirector.gvt1.com/videoplayback/id/240e9a8fa1c2d3f6/itag/44/source/gfp_video_ads/requiressl/yes/ip/0.0.0.0/ipbits/0/expire/1449903957/sparams/ip,ipbits,expire,id,itag,source,requiressl/signature/91099F7D6F7138D75851DDFF83195A272BA2D472.7C4BEFDDDA3FF631D253876A95ABF5896F7FA3E2/key/ck2/file/file.webm]]></MediaFile>
+       <MediaFile id="GDFP" delivery="progressive" width="1280" height="720" type="video/webm" bitrate="219" scalable="true" maintainAspectRatio="true"><![CDATA[https://redirector.gvt1.com/videoplayback/id/240e9a8fa1c2d3f6/itag/45/source/gfp_video_ads/requiressl/yes/ip/0.0.0.0/ipbits/0/expire/1449903957/sparams/ip,ipbits,expire,id,itag,source,requiressl/signature/A9212935A93FF20319FB52D91EFDAA3C682739AC.B50C4BA5865798B3D872DB9FFC200952702A1FBB/key/ck2/file/file.webm]]></MediaFile>
+       <MediaFile id="GDFP" delivery="progressive" width="640" height="360" type="video/webm" bitrate="117" scalable="true" maintainAspectRatio="true"><![CDATA[https://redirector.gvt1.com/videoplayback/id/240e9a8fa1c2d3f6/itag/43/source/gfp_video_ads/requiressl/yes/ip/0.0.0.0/ipbits/0/expire/1449903957/sparams/ip,ipbits,expire,id,itag,source,requiressl/signature/7825AA14A3108357F3AD79C41370F00D09B5A615.19F9C739716050E969AD91DFE6D2BE9ED0792970/key/ck2/file/file.webm]]></MediaFile>
+       <MediaFile id="GDFP" delivery="progressive" width="854" height="480" type="video/x-flv" bitrate="182" scalable="true" maintainAspectRatio="true"><![CDATA[https://redirector.gvt1.com/videoplayback/id/240e9a8fa1c2d3f6/itag/35/source/gfp_video_ads/requiressl/yes/ip/0.0.0.0/ipbits/0/expire/1449903957/sparams/ip,ipbits,expire,id,itag,source,requiressl/signature/55861BE2A0F90B2F807A0911968A0575FE5FB68F.05E474A10FAA84736FFCD7CC3D08C4CD12102904/key/ck2/file/file.flv]]></MediaFile>
+       <MediaFile id="GDFP" delivery="progressive" width="1280" height="720" type="video/mp4" bitrate="234" scalable="true" maintainAspectRatio="true"><![CDATA[https://redirector.gvt1.com/videoplayback/id/240e9a8fa1c2d3f6/itag/22/source/gfp_video_ads/requiressl/yes/ip/0.0.0.0/ipbits/0/expire/1449903957/sparams/ip,ipbits,expire,id,itag,source,requiressl/signature/1908AB8483C2CF1D85C7AE976A74B7C23B7F365F.42DC29647AA790F75D80CAE03D6992C4CAA66770/key/ck2/file/file.mp4]]></MediaFile>
+       <MediaFile id="GDFP" delivery="progressive" width="640" height="360" type="video/mp4" bitrate="116" scalable="true" maintainAspectRatio="true"><![CDATA[https://redirector.gvt1.com/videoplayback/id/240e9a8fa1c2d3f6/itag/18/source/gfp_video_ads/requiressl/yes/ip/0.0.0.0/ipbits/0/expire/1449903957/sparams/ip,ipbits,expire,id,itag,source,requiressl/signature/49914FBD40BE9D944C115D140581128035959011.6FDE00608441F78758798DFE3FE2B3D946F4CDDC/key/ck2/file/file.mp4]]></MediaFile>
+       <MediaFile id="GDFP" delivery="progressive" width="640" height="360" type="video/x-flv" bitrate="163" scalable="true" maintainAspectRatio="true"><![CDATA[https://redirector.gvt1.com/videoplayback/id/240e9a8fa1c2d3f6/itag/34/source/gfp_video_ads/requiressl/yes/ip/0.0.0.0/ipbits/0/expire/1449903957/sparams/ip,ipbits,expire,id,itag,source,requiressl/signature/3F44C090FA8BC4F6CA9FEEB03E8406BF95A215E6.1A6B2626510E900FF8A9EAB6DB903A5FF0375864/key/ck2/file/file.flv]]></MediaFile>
+       <MediaFile id="GDFP" delivery="progressive" width="426" height="240" type="video/x-flv" bitrate="120" scalable="true" maintainAspectRatio="true"><![CDATA[https://redirector.gvt1.com/videoplayback/id/240e9a8fa1c2d3f6/itag/5/source/gfp_video_ads/requiressl/yes/ip/0.0.0.0/ipbits/0/expire/1449903957/sparams/ip,ipbits,expire,id,itag,source,requiressl/signature/33B02DBD2C666794D026FAF0E5777477A4A0650D.1DF00985813E03881ADB57393AE0306F813C4C04/key/ck2/file/file.flv]]></MediaFile>
+      </MediaFiles>
+     </Linear>
+    </Creative>
+    <Creative id="57861201736" sequence="1">
+     <CompanionAds>
+      <Companion id="57861201736" width="300" height="250">
+       <StaticResource creativeType="image/png"><![CDATA[https://pagead2.googlesyndication.com/pagead/imgad?id=CICAgKDTwILFiwEQrAIY-gEyCAAnmA4d6uc2]]></StaticResource>
+       <TrackingEvents>
+        <Tracking event="creativeView"><![CDATA[https://pubads.g.doubleclick.net/pagead/adview?ai=BCn9n9XJrVuDNFsz7hASgvbngDtCvj-sGAAAAEAEgqN27JjgAWMi-r8bXAWDJxoSN5KTAE7oBCjcyOHg5MF94bWzIAQLAAgLgAgDqAiMvMTI0MzE5MDk2L2V4dGVybmFsL2FkX3J1bGVfc2FtcGxlc_gC8tEegAMBkAPoApgD8AGoAwHgBAHSBQIIAZAGAaAGFNgHAQ&sigh=K2HAJTYpNxg&cid=5GiWh2MSGG6uQ69IDkv8f-yu]]></Tracking>
+       </TrackingEvents>
+       <CompanionClickThrough><![CDATA[https://pubads.g.doubleclick.net/aclk?sa=L&ai=BCn9n9XJrVuDNFsz7hASgvbngDtCvj-sGAAAAEAEgqN27JjgAWMi-r8bXAWDJxoSN5KTAE7oBCjcyOHg5MF94bWzIAQLAAgLgAgDqAiMvMTI0MzE5MDk2L2V4dGVybmFsL2FkX3J1bGVfc2FtcGxlc_gC8tEegAMBkAPoApgD8AGoAwHgBAHSBQIIAZAGAaAGFNgHAQ&num=0&cid=5GiWh2MSGG6uQ69IDkv8f-yu&sig=AOD64_2PJwKJkgZCt_v4aakJSqILKoNyuA&client=ca-pub-3279133228669082&adurl=https://developers.google.com/interactive-media-ads/docs/vastinspector_dual]]></CompanionClickThrough>
+      </Companion>
+     </CompanionAds>
+    </Creative>
+   </Creatives>
+   <Extensions>
+    <Extension type="activeview"><CustomTracking>
+ <Tracking event="viewable_impression"><![CDATA[https://pubads.g.doubleclick.net/pagead/conversion/?ai=BWOAp9XJrVsG1Fcz7hASgvbngDtCvj-sGAAAAEAEgqN27JjgAWNC9r8bXAWDJxoSN5KTAE7oBCjcyOHg5MF94bWzIAQXAAgLgAgDqAiMvMTI0MzE5MDk2L2V4dGVybmFsL2FkX3J1bGVfc2FtcGxlc_gC8tEegAMBkAPoApgD8AGoAwHgBAGQBgGgBiPYBwE&sigh=bugfc65B5As&label=viewable_impression&acvw=[VIEWABILITY]]]></Tracking>
+</CustomTracking>
+</Extension>
+    <Extension type="geo"><Country>US</Country>
+<Bandwidth>3</Bandwidth>
+<BandwidthKbps>1800</BandwidthKbps>
+</Extension>
+<Extension type="waterfall" fallback_index="0"/></Extensions>
+  </InLine>
+ </Ad>
+</VAST>
+
