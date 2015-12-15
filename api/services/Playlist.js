@@ -119,17 +119,24 @@ var self = module.exports = {
           var midroll = midrolls[midrollIdx];
           if (midroll.time <= counter) {
             var j=i;
+            var inserted = false;
             midroll.pod.forEach(function(slot) {
               var media = self.mediaFromSlot(slot, bandwidth);
               if (media) {
-                items[j] = self.createPlaylistItem(slot.duration, media.source);
+                items.splice(j, 0, self.createPlaylistItem(slot.duration, media.source));
                 j++;
+                inserted = true;
               }
             });
 
             // increment the counter minus 1 since the next loop will add 1 more.
             i += (j-i-1)
             midrollIdx++;
+
+            if ((items.length > i+1) && inserted) {
+              // set discontinuity of next content item
+              items[i+1].set('discontinuity', true);
+            }
           }
           counter += item.get('duration');
         } else {
@@ -140,13 +147,20 @@ var self = module.exports = {
       // preroll
       if (ads.preroll) {
         var j = 0;
+        var inserted = false;
         ads.preroll.pod.forEach(function(slot) {
           var media = self.mediaFromSlot(slot, bandwidth);
           if (media) {
-            items[j] = self.createPlaylistItem(slot.duration, media.source);
+            items.splice(j, 0, self.createPlaylistItem(slot.duration, media.source));
             j++;
+            inserted = true;
           }
         });
+
+        if (inserted) {
+          // set discontinuity of first content item if preceeded by a preroll
+          items[j].set('discontinuity', true);
+        }
       }
 
       // postroll
@@ -155,7 +169,7 @@ var self = module.exports = {
         ads.postroll.pod.forEach(function(slot) {
           var media = self.mediaFromSlot(slot, bandwidth);
           if (media) {
-            items[j] = self.createPlaylistItem(slot.duration, media.source);
+            items.splice(j, 0, self.createPlaylistItem(slot.duration, media.source));
             j++;
           }
         });
