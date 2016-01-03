@@ -49,6 +49,25 @@ var self = module.exports = {
     return deferred.promise;
   },
 
+  loadAdsFromVAST: function(context) {
+    var deferred = Q.defer();
+
+    self.fetchXML(context)
+    .then(function(context) {
+      var pod = self.createAdPod(xmlData);
+      context.pod = pod;
+      sails.log.verbose('finished parsing document!');
+      return context;
+		})
+    .done(function success(context) {
+			deferred.resolve(context);
+		}, function error(context) {
+			deferred.reject(context);
+		});
+
+    return deferred.promise;
+  },
+
   /**
   * Helpers
   */
@@ -116,12 +135,12 @@ var self = module.exports = {
       if (offset == 'start') {
         // preroll
         doc.preroll = {
-          pod: self.createAdPod(adBreak, adBreakData)
+          pod: self.createAdPod(adBreakData)
         };
       } else if (offset == 'end') {
         // postroll
         doc.postroll = {
-          pod: self.createAdPod(adBreak, adBreakData)
+          pod: self.createAdPod(adBreakData)
         };
       } else {
         // midroll
@@ -134,7 +153,7 @@ var self = module.exports = {
 
           doc.midrolls.push({
             time: time,
-            pod: self.createAdPod(adBreak, adBreakData)
+            pod: self.createAdPod(adBreakData)
           });
         }
       }
@@ -144,7 +163,7 @@ var self = module.exports = {
 
   },
 
-  createAdPod: function(adBreak, adBreakData) {
+  createAdPod: function(adBreakData) {
 
     var ads = adBreakData['VAST']['Ad'];
     var pod = [];
@@ -160,6 +179,7 @@ var self = module.exports = {
       if (linear) {
         var duration = self.secondsFromTimestamp(linear['Duration'][0]);
         var media = [];
+        var hls = null;
 
         var mediaFiles = linear['MediaFiles'][0]['MediaFile'];
         mediaFiles.forEach(function(file) {
@@ -169,12 +189,15 @@ var self = module.exports = {
               bitrate: Number(file['$']['bitrate']) * 1000, // convert kbs to bps
               source: file['_']
             });
+          } else if (file['$']['type'] == 'application/x-mpegURL') {
+            hls = file['_'];
           }
         });
 
         pod.push({
           duration: duration,
-          media: media
+          media: media,
+          hls: hls
         });
       }
     });

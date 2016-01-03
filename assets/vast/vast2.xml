@@ -1,0 +1,112 @@
+<VAST xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="vast.xsd" version="2.0"> 
+	<Ad id="296756869"> 
+		<InLine> 
+			<AdSystem>DCM</AdSystem> 
+			<AdTitle>In-Stream Video</AdTitle> 
+			<Error>
+				<![CDATA[https://pagead2.googlesyndication.com/pagead/gen_204?id=xfa_video_error&amp;aid=296756869&amp;cid=63788230&amp;advid=2679278]]>
+			</Error> 
+			<Impression>
+				<![CDATA[https://googleads4.g.doubleclick.net/pcs/view?xai=AKAOjsuSGSnxRkuI-fkgE2PoNbQITEMaL_jlDhYdHnGuG9tC9jEW6vV1HYaOPbT3T6HIgQjwqW_-ktQ&amp;sig=Cg0ArKJSzCNgJ8eK92yzEAE&amp;urlfix=1&amp;adurl=]]>
+			</Impression> 
+			<Impression>
+				<![CDATA[https://secure-gl.imrworldwide.com/cgi-bin/m?ci=nlsnci292&amp;am=1&amp;at=view&amp;rt=banner&amp;st=image&amp;ca=nlsn30006&amp;cr=63788230&amp;pc=123555855&amp;ce=N3148.NBCUniversal&amp;r=3773355052]]>
+			</Impression> 
+			<Creatives> 
+				<Creative id="63788230" sequence="1"> 
+					<Linear> 
+						<Duration>00:01:00</Duration> 
+						<TrackingEvents> 
+							<Tracking event="start">
+								<![CDATA[https://ad.doubleclick.net/ddm/activity/dc_oe=ChMIx5aWtoHfyQIVxAg3Ch0WKgnbEAAYACDGqbUe;met=1;ecn1=1;etm1=0;eid1=11;]]>
+							</Tracking> 
+							<Tracking event="firstQuartile">
+								<![CDATA[https://ad.doubleclick.net/ddm/activity/dc_oe=ChMIx5aWtoHfyQIVxAg3Ch0WKgnbEAAYACDGqbUe;met=1;ecn1=1;etm1=0;eid1=960584;]]>
+							</Tracking> 
+							<Tracking event="midpoint">
+								<![CDATA[https://ad.doubleclick.net/ddm/activity/dc_oe=ChMIx5aWtoHfyQIVxAg3Ch0WKgnbEAAYACDGqbUe;met=1;ecn1=1;etm1=0;eid1=18;]]>
+							</Tracking> 
+							<Tracking event="thirdQuartile">
+								<![CDATA[https://ad.doubleclick.net/ddm/activity/dc_oe=ChMIx5aWtoHfyQIVxAg3Ch0WKgnbEAAYACDGqbUe;met=1;ecn1=1;etm1=0;eid1=960585;]]>
+							</Tracking> 
+							<Tracking event="complete">
+								<![CDATA[https://ad.doubleclick.net/ddm/activity/dc_oe=ChMIx5aWtoHfyQIVxAg3Ch0WKgnbEAAYACDGqbUe;met=1;ecn1=1;etm1=0;eid1=13;]]>
+							</Tracking> 
+							<Tracking event="mute">
+								<![CDATA[https://ad.doubleclick.net/ddm/activity/dc_oe=ChMIx5aWtoHfyQIVxAg3Ch0WKgnbEAAYACDGqbUe;met=1;ecn1=1;etm1=0;eid1=16;]]>
+							</Tracking> 
+							<Tracking event="unmute">
+								<![CDATA[https://ad.doubleclick.net/ddm/activity/dc_oe=ChMIx5aWtoHfyQIVxAg3Ch0WKgnbEAAYACDGqbUe;met=1;ecn1=1;etm1=0;eid1=149645;]]>
+							</Tracking> 
+							<Tracking event="pause">
+								<![CDATA[https://ad.doubleclick.net/ddm/activity/dc_oe=ChMIx5aWtoHfyQIVxAg3Ch0WKgnbEAAYACDGqbUe;met=1;ecn1=1;etm1=0;eid1=15;]]>
+							</Tracking> 
+							<Tracking event="fullscreen">
+								<![CDATA[https://ad.doubleclick.net/ddm/activity/dc_oe=ChMIx5aWtoHfyQIVxAg3Ch0WKgnbEAAYACDGqbUe;met=1;ecn1=1;etm1=0;eid1=19;]]>
+							</Tracking> 
+						</TrackingEvents> 
+						<VideoClicks> 
+							<ClickThrough>
+								<![CDATA[https://adclick.g.doubleclick.net/pcs/click?xai=AKAOjsuSGSnxRkuI-fkgE2PoNbQITEMaL_jlDhYdHnGuG9tC9jEW6vV1HYaOPbT3T6HIgQjwqW_-ktQ&amp;sig=Cg0ArKJSzOpTeOPPZRRrEAE&amp;urlfix=1&amp;adurl=http://www.pristiq.com%3Fsource%3Ddisplay%26o%3D123555855%7C296756869%7C%25ecid]]>
+							</ClickThrough> 
+						</VideoClicks> 
+						<MediaFiles> 
+							<MediaFile delivery="progressive" width="640" height="360" type="video/mp4" bitrate="291" scalable="false" maintainAspectRatio="false">
+								<![CDATA[https://gcdn.2mdn.net/videoplayback/id/4c8367433f1be92d/itag/18/source/doubleclick_dmm/ratebypass/yes/ip/0.0.0.0/ipbits/0/expire/3554638377/sparams/id,itag,source,ratebypass,ip,ipbits,expire/signature/292F179FFB70C00D481A8A42C1EAA5E18289A635.8888E60A3D09EAF5E0BCB6ABCEEC83BCAEE21568/key/ck2/file/file.mp4]]>
+							</MediaFile> 
+							<MediaFile delivery="progressive" width="1280" height="720" type="video/mp4" bitrate="1021" scalable="false" maintainAspectRatio="false">
+								<![CDATA[https://gcdn.2mdn.net/videoplayback/id/4c8367433f1be92d/itag/22/source/doubleclick_dmm/ratebypass/yes/ip/0.0.0.0/ipbits/0/expire/3554638384/sparams/id,itag,source,ratebypass,ip,ipbits,expire/signature/1E86B0BD0471C1DB85C4D75D27DC31F4101ECE37.17F80CA840FB7F47F9922BFF8D3368BA6046B6C2/key/ck2/file/file.mp4]]>
+							</MediaFile> 
+						</MediaFiles> 
+					</Linear> 
+				</Creative> 
+				<Creative id="64459596" sequence="1"> 
+					<CompanionAds> 
+						<Companion id="64459596" width="300" height="250"> 
+							<StaticResource creativeType="image/png">
+								<![CDATA[https://s0.2mdn.net/viewad/2679278/1-Pfizer_Static_Backup_v1_300x250_PQP753401-01.png]]>
+							</StaticResource> 
+							<TrackingEvents> 
+								<Tracking event="creativeView">
+									<![CDATA[https://googleads4.g.doubleclick.net/pcs/view?xai=AKAOjsuK5JpehzeMdMFBp036rapIkqisy0Sc6xlV4tYP4oYFjidT5-mHmYvF-Dohr3d4nuo3z-NQfxs&amp;sig=Cg0ArKJSzKsINYWmqiJ7EAE&amp;urlfix=1&amp;adurl=]]>
+								</Tracking> 
+							</TrackingEvents> 
+							<CompanionClickThrough>
+								<![CDATA[https://adclick.g.doubleclick.net/pcs/click?xai=AKAOjsuK5JpehzeMdMFBp036rapIkqisy0Sc6xlV4tYP4oYFjidT5-mHmYvF-Dohr3d4nuo3z-NQfxs&amp;sig=Cg0ArKJSzHZUAQ_xYJJ2&amp;urlfix=1&amp;adurl=http://www.pristiq.com%3Fsource%3Ddisplay%26o%3D123555855%7C296756869%7C%25ecid]]>
+							</CompanionClickThrough> 
+						</Companion> 
+						<Companion id="64459583" width="728" height="90"> 
+							<StaticResource creativeType="image/png">
+								<![CDATA[https://s1.2mdn.net/viewad/2679278/Pfizer_Static_Backup_v1_728x90_PQP753401-03.png]]>
+							</StaticResource> 
+							<TrackingEvents> 
+								<Tracking event="creativeView">
+									<![CDATA[https://googleads4.g.doubleclick.net/pcs/view?xai=AKAOjsvz1CkKa-3eiMsxmLJ_JhTQmQ8L3ChyEblKkBY7Fg6eKu50milt13qW-c3a24JYfsF90py622w&amp;sig=Cg0ArKJSzPX4mMY0p09kEAE&amp;urlfix=1&amp;adurl=]]>
+								</Tracking> 
+							</TrackingEvents> 
+							<CompanionClickThrough>
+								<![CDATA[https://adclick.g.doubleclick.net/pcs/click?xai=AKAOjsvz1CkKa-3eiMsxmLJ_JhTQmQ8L3ChyEblKkBY7Fg6eKu50milt13qW-c3a24JYfsF90py622w&amp;sig=Cg0ArKJSzHCstOOstJaX&amp;urlfix=1&amp;adurl=http://www.pristiq.com%3Fsource%3Ddisplay%26o%3D123555855%7C296756869%7C%25ecid]]>
+							</CompanionClickThrough> 
+						</Companion> 
+					</CompanionAds> 
+				</Creative> 
+			</Creatives> 
+			<Extensions> 
+				<Extension type="dart">
+					<AdServingData> 
+						<DeliveryData> 
+							<GeoData>
+								<![CDATA[ct=US&amp;st=TX&amp;city=13290&amp;dma=102&amp;zp=75254&amp;bw=4]]>
+							</GeoData> 
+						</DeliveryData> 
+					</AdServingData> 
+				</Extension> 
+				<Extension type="geo">
+					<Country>US</Country> 
+					<Bandwidth>4</Bandwidth> 
+					<BandwidthKbps>5200</BandwidthKbps> 
+				</Extension> 
+			</Extensions> 
+		</InLine> 
+	</Ad> 
+</VAST>

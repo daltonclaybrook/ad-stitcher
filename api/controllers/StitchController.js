@@ -5,6 +5,10 @@
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
 
+// live stream: http://vevoplaylist-live.hls.adaptive.level3.net/vevo/ch1/appleman.m3u8
+// ad playlist: http://walterebert.com/playground/video/hls/sintel-trailer.m3u8
+// vast: http://localhost:1337/vast/vast1.xml
+
 var Q = require('q');
 
 var self = module.exports = {

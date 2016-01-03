@@ -1,0 +1,125 @@
+<VAST xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="vast.xsd" version="2.0">
+	<Ad id="298677721">
+		<InLine>
+			<AdSystem>DCM</AdSystem>
+			<AdTitle>In-Stream Video</AdTitle>
+			<Survey>
+				<![CDATA[https://js.dmtry.com/antenna2.js?0_4078_125615477_67041699]]>
+			</Survey>
+			<Error>
+				<![CDATA[https://pagead2.googlesyndication.com/pagead/gen_204?id=xfa_video_error&amp;aid=298677721&amp;cid=67041699&amp;advid=3856256]]>
+			</Error>
+			<Impression>
+				<![CDATA[https://googleads4.g.doubleclick.net/pcs/view?xai=AKAOjsvojCay4NGh6LHXQ9MEcMIHC_2AHn0Tyx423NLhIDWSO6kvRNAC4oLpqmJxg1zkqUHt91VFNXp04neoQIe-wDfnOvp_6GA&amp;sig=Cg0ArKJSzN9J_StHDu8MEAE&amp;urlfix=1&amp;adurl=]]>
+			</Impression>
+			<Impression>
+				<![CDATA[https://secure-gl.imrworldwide.com/cgi-bin/m?ci=nlsnci292&amp;am=1&amp;at=view&amp;rt=banner&amp;st=image&amp;ca=nlsn31119&amp;cr=67041699&amp;pc=125615477&amp;ce=N8278.128147.NBCUNIVERSAL&amp;r=424509677]]>
+			</Impression>
+			<Creatives>
+				<Creative id="67041699" AdID="EEEL5228000H" sequence="1">
+					<Linear>
+						<Duration>00:00:52</Duration>
+						<TrackingEvents>
+							<Tracking event="start">
+								<![CDATA[https://ad.doubleclick.net/ddm/activity/dc_oe=ChMIgIictoHfyQIVSQc3Ch2yuQzXEAAYACCj8_sf;met=1;ecn1=1;etm1=0;eid1=11;]]>
+							</Tracking>
+							<Tracking event="firstQuartile">
+								<![CDATA[https://ad.doubleclick.net/ddm/activity/dc_oe=ChMIgIictoHfyQIVSQc3Ch2yuQzXEAAYACCj8_sf;met=1;ecn1=1;etm1=0;eid1=960584;]]>
+							</Tracking>
+							<Tracking event="midpoint">
+								<![CDATA[https://ad.doubleclick.net/ddm/activity/dc_oe=ChMIgIictoHfyQIVSQc3Ch2yuQzXEAAYACCj8_sf;met=1;ecn1=1;etm1=0;eid1=18;]]>
+							</Tracking>
+							<Tracking event="thirdQuartile">
+								<![CDATA[https://ad.doubleclick.net/ddm/activity/dc_oe=ChMIgIictoHfyQIVSQc3Ch2yuQzXEAAYACCj8_sf;met=1;ecn1=1;etm1=0;eid1=960585;]]>
+							</Tracking>
+							<Tracking event="complete">
+								<![CDATA[https://ad.doubleclick.net/ddm/activity/dc_oe=ChMIgIictoHfyQIVSQc3Ch2yuQzXEAAYACCj8_sf;met=1;ecn1=1;etm1=0;eid1=13;]]>
+							</Tracking>
+							<Tracking event="mute">
+								<![CDATA[https://ad.doubleclick.net/ddm/activity/dc_oe=ChMIgIictoHfyQIVSQc3Ch2yuQzXEAAYACCj8_sf;met=1;ecn1=1;etm1=0;eid1=16;]]>
+							</Tracking>
+							<Tracking event="unmute">
+								<![CDATA[https://ad.doubleclick.net/ddm/activity/dc_oe=ChMIgIictoHfyQIVSQc3Ch2yuQzXEAAYACCj8_sf;met=1;ecn1=1;etm1=0;eid1=149645;]]>
+							</Tracking>
+							<Tracking event="pause">
+								<![CDATA[https://ad.doubleclick.net/ddm/activity/dc_oe=ChMIgIictoHfyQIVSQc3Ch2yuQzXEAAYACCj8_sf;met=1;ecn1=1;etm1=0;eid1=15;]]>
+							</Tracking>
+							<Tracking event="fullscreen">
+								<![CDATA[https://ad.doubleclick.net/ddm/activity/dc_oe=ChMIgIictoHfyQIVSQc3Ch2yuQzXEAAYACCj8_sf;met=1;ecn1=1;etm1=0;eid1=19;]]>
+							</Tracking>
+						</TrackingEvents>
+						<VideoClicks>
+							<ClickThrough>
+								<![CDATA[https://adclick.g.doubleclick.net/pcs/click?xai=AKAOjsvojCay4NGh6LHXQ9MEcMIHC_2AHn0Tyx423NLhIDWSO6kvRNAC4oLpqmJxg1zkqUHt91VFNXp04neoQIe-wDfnOvp_6GA&amp;sig=Cg0ArKJSzKWjjMnkaVdvEAE&amp;urlfix=1&amp;adurl=http://www1.macys.com/shop/product/estee-lauder-the-color-edit-set-only-59.50-with-estee-lauder-fragrance-purchase%3FID%3D2397357%26cm_mmc%3DCarat-_-dec_cosm_estee_lauder_frag_blockbuster_programmatic_olv_tv_t5110148-_-1339162-_-11222015_01022016]]>
+							</ClickThrough>
+						</VideoClicks>
+						<MediaFiles>
+							<MediaFile delivery="progressive" width="640" height="360" type="application/x-mpegURL" bitrate="95" scalable="false" maintainAspectRatio="false">
+								<![CDATA[http://walterebert.com/playground/video/hls/sintel-trailer.m3u8]]>
+							</MediaFile>
+						</MediaFiles>
+					</Linear>
+				</Creative>
+				<Creative id="67040861" sequence="1">
+					<CompanionAds>
+						<Companion id="67040861" width="300" height="250">
+							<StaticResource creativeType="image/jpeg">
+								<![CDATA[https://s1.2mdn.net/viewad/3856256/2-Holiday15_BB_Macys_300x250.jpg]]>
+							</StaticResource>
+							<TrackingEvents>
+								<Tracking event="creativeView">
+									<![CDATA[https://googleads4.g.doubleclick.net/pcs/view?xai=AKAOjsuJdLKl1LsTrSxuu_nujh0Bsf2kBWb-0XaRN3lcAFzP6ZF3EdNhZRseRbMTFlcj8MnQUx9LRAVqx_wvvCHk8_g3nteXL0g&amp;sig=Cg0ArKJSzIeRboN2R8csEAE&amp;urlfix=1&amp;adurl=]]>
+								</Tracking>
+							</TrackingEvents>
+							<CompanionClickThrough>
+								<![CDATA[https://adclick.g.doubleclick.net/pcs/click?xai=AKAOjsuJdLKl1LsTrSxuu_nujh0Bsf2kBWb-0XaRN3lcAFzP6ZF3EdNhZRseRbMTFlcj8MnQUx9LRAVqx_wvvCHk8_g3nteXL0g&amp;sig=Cg0ArKJSzLv8zhqKF_yo&amp;urlfix=1&amp;adurl=http://www1.macys.com/shop/product/estee-lauder-the-color-edit-set-only-59.50-with-estee-lauder-fragrance-purchase%3FID%3D2397357%26cm_mmc%3DCarat-_-dec_cosm_estee_lauder_frag_blockbuster_programmatic_olv_tv_t5110148-_-1339162-_-11222015_01022016]]>
+							</CompanionClickThrough>
+						</Companion>
+						<Companion id="67041967" width="300" height="60">
+							<StaticResource creativeType="image/jpeg">
+								<![CDATA[https://s1.2mdn.net/viewad/3856256/Holiday15_BB_Macys_300x60.jpg]]>
+							</StaticResource>
+							<TrackingEvents>
+								<Tracking event="creativeView">
+									<![CDATA[https://googleads4.g.doubleclick.net/pcs/view?xai=AKAOjssl36qqqLPgXxhmmxTPmYqXXUx7b_og3Lbf-ogNwrPjlcs2PyjLcNzmm3ID7zgxrC1pgC3IbtM7HRRQHrS8GbQMuTjON50&amp;sig=Cg0ArKJSzCDWZS4aD40BEAE&amp;urlfix=1&amp;adurl=]]>
+								</Tracking>
+							</TrackingEvents>
+							<CompanionClickThrough>
+								<![CDATA[https://adclick.g.doubleclick.net/pcs/click?xai=AKAOjssl36qqqLPgXxhmmxTPmYqXXUx7b_og3Lbf-ogNwrPjlcs2PyjLcNzmm3ID7zgxrC1pgC3IbtM7HRRQHrS8GbQMuTjON50&amp;sig=Cg0ArKJSzGYJJTTZ7oT7&amp;urlfix=1&amp;adurl=http://www1.macys.com/shop/product/estee-lauder-the-color-edit-set-only-59.50-with-estee-lauder-fragrance-purchase%3FID%3D2397357%26cm_mmc%3DCarat-_-dec_cosm_estee_lauder_frag_blockbuster_programmatic_olv_tv_t5110148-_-1339162-_-11222015_01022016]]>
+							</CompanionClickThrough>
+						</Companion>
+						<Companion id="67042868" width="728" height="90">
+							<StaticResource creativeType="image/jpeg">
+								<![CDATA[https://s0.2mdn.net/viewad/3856256/Holiday15_BB_Macys_728x90.jpg]]>
+							</StaticResource>
+							<TrackingEvents>
+								<Tracking event="creativeView">
+									<![CDATA[https://googleads4.g.doubleclick.net/pcs/view?xai=AKAOjsv1tOvqqpIhPCEqt2Vsa7TviB9m9ezSm_xeTbN3Ly402cxUeQD2d5jBMU8ogBPlcu7zdx-S91TqCdWkHx9rUTMdrvoqdJk&amp;sig=Cg0ArKJSzJL8ogAboj9_EAE&amp;urlfix=1&amp;adurl=]]>
+								</Tracking>
+							</TrackingEvents>
+							<CompanionClickThrough>
+								<![CDATA[https://adclick.g.doubleclick.net/pcs/click?xai=AKAOjsv1tOvqqpIhPCEqt2Vsa7TviB9m9ezSm_xeTbN3Ly402cxUeQD2d5jBMU8ogBPlcu7zdx-S91TqCdWkHx9rUTMdrvoqdJk&amp;sig=Cg0ArKJSzJKgCiKl0BkI&amp;urlfix=1&amp;adurl=http://www1.macys.com/shop/product/estee-lauder-the-color-edit-set-only-59.50-with-estee-lauder-fragrance-purchase%3FID%3D2397357%26cm_mmc%3DCarat-_-dec_cosm_estee_lauder_frag_blockbuster_programmatic_olv_tv_t5110148-_-1339162-_-11222015_01022016]]>
+							</CompanionClickThrough>
+						</Companion>
+					</CompanionAds>
+				</Creative>
+			</Creatives>
+			<Extensions>
+				<Extension type="dart">
+					<AdServingData>
+						<DeliveryData>
+							<GeoData>
+								<![CDATA[ct=US&amp;st=TX&amp;city=13369&amp;dma=102&amp;zp=75001&amp;bw=4]]>
+							</GeoData>
+						</DeliveryData>
+					</AdServingData>
+				</Extension>
+				<Extension type="geo">
+					<Country>US</Country>
+					<Bandwidth>4</Bandwidth>
+					<BandwidthKbps>5200</BandwidthKbps>
+				</Extension>
+			</Extensions>
+		</InLine>
+	</Ad>
+</VAST>

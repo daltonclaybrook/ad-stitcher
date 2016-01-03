@@ -23,6 +23,7 @@
 module.exports.routes = {
 
   'GET /': 'StitchController.stitchMaster',
-  'GET /media': 'StitchController.stitchMedia'
+  'GET /media': 'StitchController.stitchMedia',
+  'POST /adSlot' : 'AdSlotController.insertAd'
 
 };

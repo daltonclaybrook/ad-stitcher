@@ -26,7 +26,7 @@ module.exports.policies = {
   *                                                                          *
   ***************************************************************************/
 
-  // '*': true,
+  '*': false,
 
   /***************************************************************************
   *                                                                          *
@@ -35,8 +35,11 @@ module.exports.policies = {
   *                                                                          *
   ***************************************************************************/
 
+  AdSlotController: {
+    insertAd: 'validateInsertAd'
+  },
+
   StitchController: {
-    '*': false,
     stitchMaster: 'confirmStitchQuery',
     stitchMedia: true
   }
