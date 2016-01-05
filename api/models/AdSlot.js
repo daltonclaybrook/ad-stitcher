@@ -15,7 +15,11 @@ module.exports = {
     streamURL: {
       type: 'string',
       required: true
+    },
+    vastURL: {
+      type: 'string',
+      required: true
     }
   }
-  
+
 };

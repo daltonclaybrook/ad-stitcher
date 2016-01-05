@@ -41,7 +41,10 @@ module.exports.policies = {
 
   StitchController: {
     stitchMaster: 'confirmStitchQuery',
-    stitchMedia: true
+    stitchMedia: true,
+    
+    stitchLive: 'validateLive',
+    stitchLiveMedia: true
   }
 
 };

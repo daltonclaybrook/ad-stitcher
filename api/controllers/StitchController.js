@@ -76,11 +76,75 @@ var self = module.exports = {
 
 	},
 
+	// fetches the master playlist specified in the request and returns
+	stitchLive: function(req, res) {
+
+		var streamURL = new Buffer(req.query.streamURL, 'base64').toString("utf8");
+		sails.log.verbose('streamURL: ' + streamURL);
+
+		var context = {
+			url: streamURL,
+			vmapURL: req.query.vmapURL
+		};
+
+		Playlist.fetchPlaylist(context)
+		.then(Playlist.insertNewURIs)
+		.then(Playlist.exportString)
+		.done(function success(context) {
+			res.playlist(context.playlistString);
+		}, function error(context) {
+			Responder.sendResponse(res, context);
+		});
+
+	},
+
+	// called by the video player. fetches a media playlist and stitches ads if necessary.
+	stitchLiveMedia: function(req, res) {
+
+		var master = new Buffer(req.query.master, 'base64').toString("utf8");
+		var uri = new Buffer(req.query.uri, 'base64').toString("utf8");
+		var playlistURL = Playlist.generateAbsolueURI(master, uri);
+		var bandwidth = req.query.bandwidth;
+
+		sails.log.verbose(playlistURL + '\n' + uri + '\n' + bandwidth + '\n\n');
+		var context = {
+			master: master,
+			playlistURL: playlistURL,
+			bandwidth: Number(bandwidth),
+
+			// used by fetchPlaylist
+			url: playlistURL
+		};
+
+		Playlist.fetchPlaylist(context)
+		.then(Playlist.makeAbsoluteSegmentPaths)
+		.then(self.fetchAdSlot)
+		.then(Playlist.exportString)
+		.done(function success(context) {
+			res.playlist(context.playlistString);
+		}, function error(context) {
+			Responder.sendResponse(res, context);
+		});
+
+	},
+
 	/**
 	*	Helper methods
 	*/
 
+	fetchAdSlot: function(context) {
+		var deferred = Q.defer();
 
+		AdSlot.findOne({
+			streamURL: context.master
+		})
+		.exec(function(err, slot) {
+			context.sequenceID = slot;
+			deferred.resolve(context);
+		});
+
+		return deferred.promise;
+	}
 
 
 

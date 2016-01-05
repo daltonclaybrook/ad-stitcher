@@ -58,7 +58,7 @@ var self = module.exports = {
         var uri = item.properties.uri;
         var bandwidth = item.attributes.attributes.bandwidth;
 
-        var newURI = self.createURI(masterURL, uri, context.vmapURL, bandwidth);
+        var newURI = self.createURI(masterURL, uri, bandwidth, context.vmapURL);
         item.properties.uri = newURI;
       });
 
@@ -87,9 +87,7 @@ var self = module.exports = {
 
       items.forEach(function(item) {
         var uri = item.get('uri');
-        var components = url.split('/');
-    		components[components.length-1] = uri;
-    		var absolutePath = components.join('/');
+        var absolutePath = self.generateAbsolueURI(url, uri);
         item.set('uri', absolutePath);
       });
 
@@ -196,16 +194,22 @@ var self = module.exports = {
   * Helpers
   */
 
-  createURI: function(masterURL, uri, vmap, bandwidth) {
+  createURI: function(masterURL, uri, bandwidth, vmap) {
     var base64Master = new Buffer(masterURL, 'utf8').toString('base64');
     var base64URI = new Buffer(uri, 'utf8').toString('base64');
 
     var urlEncodedMaster = encodeURIComponent(base64Master);
     var urlEncodedURI = encodeURIComponent(base64URI);
-    var urlEncodedVMAP = encodeURIComponent(vmap);
     var urlEncodedBandwidth = encodeURIComponent(bandwidth);
 
-    return 'media?master=' + urlEncodedMaster + '&uri=' + urlEncodedURI + '&vmap=' + urlEncodedVMAP + '&bandwidth=' + urlEncodedBandwidth;
+    var prefix = (vmap ? 'media' : 'liveMedia');
+    var url = prefix + '?master=' + urlEncodedMaster + '&uri=' + urlEncodedURI + '&bandwidth=' + urlEncodedBandwidth;
+    if (vmap) {
+      var urlEncodedVMAP = encodeURIComponent(vmap);
+      url += '&vmap=' + urlEncodedVMAP;
+    }
+
+    return url;
   },
 
   mediaFromSlot: function(slot, bandwidth) {

@@ -32,6 +32,7 @@ var self = module.exports = {
 
 			return {
 				streamURL: streamURL,
+				vastURL: vastURL,
 				masterPlaylist: playlist,
 				pod: adContext.pod,
 
