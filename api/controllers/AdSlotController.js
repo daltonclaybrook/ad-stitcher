@@ -27,20 +27,32 @@ var self = module.exports = {
 			var item = playlist.items.StreamItem[0];
 			var uri = item.get('uri');
 			var absoluteURL = Playlist.generateAbsolueURI(streamURL, uri);
+			var adPlaylistURL = adContext.pod[0].hls.trim();
+			sails.log.verbose('absolute url: ' + absoluteURL + '\nad url: ' + adPlaylistURL);
 
-			sails.log.verbose('absolute url: ' + absoluteURL);
+			if (!adPlaylistURL) {
+				throw {
+					errorCode: 400,
+					error: 'VAST url did not include a HLS rendition.'
+				};
+			}
 
-			return {
-				streamURL: streamURL,
-				vastURL: vastURL,
-				masterPlaylist: playlist,
-				pod: adContext.pod,
+			return Q.all([
+				Playlist.fetchPlaylist({
+					url: absoluteURL,
+					streamURL: streamURL
+				}),
 
-				// for next action
-				url: absoluteURL
-			};
+				Playlist.fetchPlaylist({ url: adPlaylistURL })
+			]);
 		})
-		.then(Playlist.fetchPlaylist)
+		.spread(function(streamContext, adContext) {
+			streamContext.adPlaylist = adContext.playlist;
+			streamContext.adMasterURL = adContext.url;
+
+			sails.log.verbose('context: ' + JSON.stringify(streamContext, null, 2));
+			return streamContext;
+		})
 		.then(self.createAdSlotRecord)
 		.done(finish, finish);
 
@@ -66,6 +78,10 @@ var self = module.exports = {
 		var segmentsToAdd = Math.ceil(20.0 / targetDuration);
 		var sequenceID = sequence + itemCount + segmentsToAdd;
 
+		sails.log.verbose('creating sequenceID: ' + sequenceID + ', streamURL: ' + context.streamURL);
+
+		try {
+
 		AdSlot.create({
     	sequenceID: sequenceID,
       streamURL: context.streamURL
@@ -77,11 +93,38 @@ var self = module.exports = {
 				sails.log.verbose('error: ' + JSON.stringify(err, null, 2));
 				deferred.reject(context);
 			} else {
-				context.payload = 'success';
-				sails.log.verbose('created record: ' + JSON.stringify(slot, null, 2));
-				deferred.resolve(context);
+				sails.log.verbose('adding AdPlaylists...');
+				var adPlaylist = context.adPlaylist;
+				var items = adPlaylist.items.StreamItem;
+				var models = [];
+				items.forEach(function(item) {
+					models.push({
+						slot: slot,
+						streamURL: Playlist.generateAbsolueURI(context.adMasterURL, item.get('uri')),
+						bandwidth: item.attributes.attributes.bandwidth
+					});
+				});
+
+				AdPlaylist.create(models)
+				.exec(function(err, playlists) {
+					if (err || !playlists) {
+						context.errorCode = 500;
+						context.error = 'an unknown error occurred';
+
+						sails.log.verbose('error: ' + JSON.stringify(err, null, 2));
+						deferred.reject(context);
+					} else {
+						context.payload = 'success';
+						sails.log.verbose('created record: ' + JSON.stringify(slot, null, 2) + '\nrenditions: ' + JSON.stringify(playlists, null, 2));
+						deferred.resolve(context);
+					}
+				})
 			}
     });
+
+	} catch (err) {
+		sails.log.verbose('catching error: ' + JSON. stringify(err, null, 2));
+	}
 
 		sails.log.verbose('\nsequence: ' + sequence + '\ntarget duration: ' + targetDuration + '\nitemCount: ' + itemCount + '\nsegments to add: ' + segmentsToAdd + '\nsequence ID: ' + sequenceID + '\n');
 		return deferred.promise;
