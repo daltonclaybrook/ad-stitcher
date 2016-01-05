@@ -22,12 +22,24 @@ var self = module.exports = {
 			AdService.loadAdsFromVAST({ url: vastURL })
 		])
 		.spread(function(playlistContext, adContext) {
+
+			var playlist = playlistContext.playlist;
+			var item = playlist.items.StreamItem[0];
+			var uri = item.get('uri');
+			var absoluteURL = Playlist.generateAbsolueURI(streamURL, uri);
+
+			sails.log.verbose('absolute url: ' + absoluteURL);
+
 			return {
 				streamURL: streamURL,
-				playlist: playlistContext.playlist
-				pod: adContext.pod
+				masterPlaylist: playlist,
+				pod: adContext.pod,
+
+				// for next action
+				url: absoluteURL
 			};
 		})
+		.then(Playlist.fetchPlaylist)
 		.then(self.createAdSlotRecord)
 		.done(finish, finish);
 
@@ -42,7 +54,36 @@ var self = module.exports = {
 	*/
 
 	createAdSlotRecord: function(context) {
+		var deferred = Q.defer();
 
+		var playlist = context.playlist;
+		var sequence = playlist.get('mediaSequence');
+		var targetDuration = playlist.get('targetDuration');
+		var itemCount = playlist.items.PlaylistItem.length;
+
+		// choose seguence ID that is > 20 seconds after the last item
+		var segmentsToAdd = Math.ceil(20.0 / targetDuration);
+		var sequenceID = sequence + itemCount + segmentsToAdd;
+
+		AdSlot.create({
+    	sequenceID: sequenceID,
+      streamURL: context.streamURL
+    }).exec(function(err, slot) {
+			if (err || !slot) {
+				context.errorCode = 500;
+				context.error = 'an unknown error occurred';
+
+				sails.log.verbose('error: ' + JSON.stringify(err, null, 2));
+				deferred.reject(context);
+			} else {
+				context.payload = 'success';
+				sails.log.verbose('created record: ' + JSON.stringify(slot, null, 2));
+				deferred.resolve(context);
+			}
+    });
+
+		sails.log.verbose('\nsequence: ' + sequence + '\ntarget duration: ' + targetDuration + '\nitemCount: ' + itemCount + '\nsegments to add: ' + segmentsToAdd + '\nsequence ID: ' + sequenceID + '\n');
+		return deferred.promise;
 	}
 
 };

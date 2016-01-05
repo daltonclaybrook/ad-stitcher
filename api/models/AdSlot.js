@@ -8,7 +8,14 @@
 module.exports = {
 
   attributes: {
-
+    sequenceID: {
+      type: 'integer',
+      required: true
+    },
+    streamURL: {
+      type: 'string',
+      required: true
+    }
   }
+  
 };
-

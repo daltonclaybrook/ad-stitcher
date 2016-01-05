@@ -52,9 +52,11 @@ var self = module.exports = {
   loadAdsFromVAST: function(context) {
     var deferred = Q.defer();
 
+    sails.log.verbose('loading ads from vast');
+
     self.fetchXML(context)
     .then(function(context) {
-      var pod = self.createAdPod(xmlData);
+      var pod = self.createAdPod(context.xmlData);
       context.pod = pod;
       sails.log.verbose('finished parsing document!');
       return context;
@@ -84,6 +86,7 @@ var self = module.exports = {
 						error: 'error parsing XML data'
 					});
 				} else {
+          sails.log.verbose('finished fetching xml');
 					context.xmlData = result;
 					deferred.resolve(context);
 				}

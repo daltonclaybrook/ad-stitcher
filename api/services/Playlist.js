@@ -4,7 +4,7 @@
 * Convenience methods for manipulating m3u8 playlist data.
 */
 
-var https = require('https');
+var https = require('http');
 var Q = require('q');
 var m3u8 = require('m3u8');
 
@@ -177,6 +177,19 @@ var self = module.exports = {
 
       return context;
     });
+  },
+
+  generateAbsolueURI: function(baseURI, suffix) {
+
+    if (suffix.indexOf('http') == 0) {
+      return suffix;
+    } else if (suffix.indexOf('./') == 0) {
+      suffix = suffix.substring(2, suffix.length);
+    }
+
+    var components = baseURI.split('/');
+    components[components.length-1] = suffix;
+    return components.join('/');
   },
 
   /**
