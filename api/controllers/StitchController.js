@@ -119,6 +119,7 @@ var self = module.exports = {
 		Playlist.fetchPlaylist(context)
 		.then(Playlist.makeAbsoluteSegmentPaths)
 		.then(self.fetchAdSlot)
+		.then(Playlist.insertLiveAd)
 		.then(Playlist.exportString)
 		.done(function success(context) {
 			res.playlist(context.playlistString);
@@ -133,19 +134,27 @@ var self = module.exports = {
 	*/
 
 	fetchAdSlot: function(context) {
+		sails.log.verbose('fetching ad slot...');
+
 		var deferred = Q.defer();
 
 		AdSlot.findOne({
 			streamURL: context.master
 		})
+		.populateAll()
 		.exec(function(err, slot) {
-			context.sequenceID = slot;
-			deferred.resolve(context);
+			if (err) {
+				context.errorCode = 500;
+				context.error = 'an unknown error occurred';
+				deferred.reject(context);
+			} else {
+				sails.log.verbose('slot: ' + JSON.stringify(slot, null, 2));
+				context.slot = slot;
+				deferred.resolve(context);
+			}
 		});
 
 		return deferred.promise;
 	}
-
-
 
 };

@@ -177,6 +177,34 @@ var self = module.exports = {
     });
   },
 
+  insertLiveAd: function(context) {
+    return Q.fcall(function() {
+      if (!context.slot) {
+        return context;
+      }
+
+      var playlist = context.playlist;
+      var bandwidth = context.bandwidth;
+      var slot = context.slot;
+
+      var items = playlist.items.PlaylistItem;
+      var startSequence = playlist.get('mediaSequence');
+      if (slot.sequenceID < startSequence) {
+        // remove from database
+      } else if (startSequence + items.length < slot.sequenceID) {
+        // have not reached the ad yet
+        return context;
+      } else {
+        var idx = slot.sequenceID - startSequence;
+
+      }
+
+      sails.log.verbose('playlist: ' + JSON.stringify(playlist, null, 2));
+      return context;
+
+    });
+  },
+
   generateAbsolueURI: function(baseURI, suffix) {
 
     if (suffix.indexOf('http') == 0) {
