@@ -103,7 +103,7 @@ var self = module.exports = {
 
 		var master = new Buffer(req.query.master, 'base64').toString("utf8");
 		var uri = new Buffer(req.query.uri, 'base64').toString("utf8");
-		var playlistURL = Playlist.generateAbsolueURI(master, uri);
+		var playlistURL = Playlist.generateAbsoluteURI(master, uri);
 		var bandwidth = req.query.bandwidth;
 
 		sails.log.verbose(playlistURL + '\n' + uri + '\n' + bandwidth + '\n\n');
@@ -118,7 +118,20 @@ var self = module.exports = {
 
 		Playlist.fetchPlaylist(context)
 		.then(Playlist.makeAbsoluteSegmentPaths)
+		.then(function(context) {
+			// massaging context
+			context.streamPlaylist = context.playlist;
+			return context;
+		})
 		.then(self.fetchAdSlot)
+		.then(Playlist.fetchPlaylist)
+		.then(function(context) {
+			// massaging context
+			context.adPlaylist = context.playlist;
+			context.playlist = context.streamPlaylist;
+			sails.log.verbose('context update: ' + JSON.stringify(context, null, 2));
+			return context;
+		})
 		.then(Playlist.insertLiveAd)
 		.then(Playlist.exportString)
 		.done(function success(context) {
@@ -148,13 +161,35 @@ var self = module.exports = {
 				context.error = 'an unknown error occurred';
 				deferred.reject(context);
 			} else {
-				sails.log.verbose('slot: ' + JSON.stringify(slot, null, 2));
-				context.slot = slot;
+				if (slot) {
+					sails.log.verbose('slot: ' + JSON.stringify(slot, null, 2));
+					context.slot = slot;
+					context.url = self.streamURLForSlot(slot, context.bandwidth);
+					sails.log.verbose('url: ' + context.url);
+				}
+
 				deferred.resolve(context);
 			}
 		});
 
 		return deferred.promise;
+	},
+
+	streamURLForSlot: function(slot, bandwidth) {
+		var playlists = slot.playlists;
+		var selectedPlaylist = null;
+		playlists.forEach(function(playlist) {
+			if (playlist.bandwidth <= bandwidth) {
+				if (!selectedPlaylist) {
+					selectedPlaylist = playlist;
+				} else if (playlist.bandwidth > selectedPlaylist.bandwidth) {
+					selectedPlaylist = playlist;
+				}
+			}
+		});
+
+		sails.log.verbose('stitching url: ' + (selectedPlaylist ? selectedPlaylist.streamURL : null));
+		return (selectedPlaylist ? selectedPlaylist.streamURL : null);
 	}
 
 };

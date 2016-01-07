@@ -87,7 +87,7 @@ var self = module.exports = {
 
       items.forEach(function(item) {
         var uri = item.get('uri');
-        var absolutePath = self.generateAbsolueURI(url, uri);
+        var absolutePath = self.generateAbsoluteURI(url, uri);
         item.set('uri', absolutePath);
       });
 
@@ -183,29 +183,55 @@ var self = module.exports = {
         return context;
       }
 
-      var playlist = context.playlist;
+      var streamPlaylist = context.playlist;
+      var adPlaylist = context.adPlaylist;
+      var adBaseURL = context.url;
       var bandwidth = context.bandwidth;
       var slot = context.slot;
 
-      var items = playlist.items.PlaylistItem;
-      var startSequence = playlist.get('mediaSequence');
+      var items = streamPlaylist.items.PlaylistItem;
+      var adItems = adPlaylist.items.PlaylistItem;
+      var startSequence = streamPlaylist.get('mediaSequence');
+
+      var highDuration = streamPlaylist.get('targetDuration');
+      adItems.forEach(function(item) {
+        var duration = item.get('duration');
+        if (duration > highDuration) {
+          highDuration = duration;
+        }
+        item.set('uri', self.generateAbsoluteURI(adBaseURL, item.get('uri')));
+      });
+      streamPlaylist.set('targetDuration', Math.ceil(highDuration));
+
       if (slot.sequenceID < startSequence) {
-        // remove from database
+        // must add to this number with the number of items we've already inserted. in the future, this will be optimized into it's own model.
+        streamPlaylist.set('mediaSequence', startSequence + adItems.length);
+        sails.log.verbose('ad is in the past...');
       } else if (startSequence + items.length < slot.sequenceID) {
         // have not reached the ad yet
+        sails.log.verbose('have not reached ad yet... sequenceID: ' + slot.sequenceID);
         return context;
       } else {
-        var idx = slot.sequenceID - startSequence;
+        sails.log.verbose('inserting ad...');
+        adItems[0].set('discontinuity', true);
 
+        var idx = slot.sequenceID - startSequence;
+        if (items.length > idx) {
+          items[idx].set('discontinuity', true);
+        }
+
+        for (var i=0; i<adItems.length; i++) {
+          items.splice(idx+i, 0, adItems[i]);
+        }
       }
 
-      sails.log.verbose('playlist: ' + JSON.stringify(playlist, null, 2));
+      sails.log.verbose('playlist: ' + JSON.stringify(streamPlaylist, null, 2));
       return context;
 
     });
   },
 
-  generateAbsolueURI: function(baseURI, suffix) {
+  generateAbsoluteURI: function(baseURI, suffix) {
 
     if (suffix.indexOf('http') == 0) {
       return suffix;

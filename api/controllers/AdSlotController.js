@@ -26,7 +26,7 @@ var self = module.exports = {
 			var playlist = playlistContext.playlist;
 			var item = playlist.items.StreamItem[0];
 			var uri = item.get('uri');
-			var absoluteURL = Playlist.generateAbsolueURI(streamURL, uri);
+			var absoluteURL = Playlist.generateAbsoluteURI(streamURL, uri);
 			var adPlaylistURL = adContext.pod[0].hls.trim();
 			sails.log.verbose('absolute url: ' + absoluteURL + '\nad url: ' + adPlaylistURL);
 
@@ -100,7 +100,7 @@ var self = module.exports = {
 				items.forEach(function(item) {
 					models.push({
 						slot: slot,
-						streamURL: Playlist.generateAbsolueURI(context.adMasterURL, item.get('uri')),
+						streamURL: Playlist.generateAbsoluteURI(context.adMasterURL, item.get('uri')),
 						bandwidth: item.attributes.attributes.bandwidth
 					});
 				});
