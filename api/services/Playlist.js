@@ -192,10 +192,13 @@ var self = module.exports = {
       }
 
       var items = streamPlaylist.items.PlaylistItem;
-      var discontinuitySequence = 0;
       var highDuration = streamPlaylist.get('targetDuration');
       var startSequence = streamPlaylist.get('mediaSequence');
       var adItems = adPlaylist.items.PlaylistItem;
+      adItems[0].set('discontinuity', true);
+
+      var discontinuitySequence = 0;
+      var endSequence = startSequence;
 
       // make absolute URLs for ad Items + determine longest duration segment
       var totalAdDuration = 0;
@@ -211,28 +214,22 @@ var self = module.exports = {
       // determine where to insert ads
       var insertionIdx = slot.sequenceID - startSequence;
 
-      // set discontinuity on the first real segment after the ad segments if possible
       if ((items.length > insertionIdx) && (insertionIdx >= 0)) {
         items[insertionIdx].set('discontinuity', true);
-      } else if ((insertionIdx < 0) && (insertionIdx+adItems.length >= 0)) {
-        items[0].set('discontinuity', true);
-      } else if ((insertionIdx < 0) && (insertionIdx+adItems.length < 0)) {
-        discontinuitySequence++;
+      } else if (insertionIdx < 0) {
+        discontinuitySequence += 2;
+        endSequence += adItems.length;
       }
 
       // actually insert the ads
-      for (var i=0; i<adItems.length; i++) {
-        if (insertionIdx+i > items.length) {
-          //no-op. do not insert ad. do no increase discontinuity sequence.
-        } else if (insertionIdx+i >= 0) {
-          adItems[i].set('discontinuity', true);
+      if ((insertionIdx >= 0) && (insertionIdx <= items.length)) {
+        for (var i=0; i<adItems.length; i++) {
           items.splice(insertionIdx+i, 0, adItems[i]);
-        } else {
-          discontinuitySequence++;
         }
       }
 
       // update playlist properties (mediaSequence, targetDuration, discontinuitySequence)
+      streamPlaylist.set('mediaSequence', endSequence);
       streamPlaylist.set('targetDuration', Math.ceil(highDuration));
       streamPlaylist.set('EXT-X-DISCONTINUITY-SEQUENCE', discontinuitySequence);
 
