@@ -178,70 +178,6 @@ var self = module.exports = {
     });
   },
 
-  // insertLiveAd: function(context) {
-  //   return Q.fcall(function() {
-  //     if (!context.slot) {
-  //       return context;
-  //     }
-  //
-  //     var streamPlaylist = context.playlist;
-  //     var adPlaylist = context.adPlaylist;
-  //     var adBaseURL = context.url;
-  //     var bandwidth = context.bandwidth;
-  //     var slot = context.slot;
-  //
-  //     var items = streamPlaylist.items.PlaylistItem;
-  //     var adItems = adPlaylist.items.PlaylistItem;
-  //     var startSequence = streamPlaylist.get('mediaSequence');
-  //
-  //     var highDuration = streamPlaylist.get('targetDuration');
-  //     adItems.forEach(function(item) {
-  //       var duration = item.get('duration');
-  //       if (duration > highDuration) {
-  //         highDuration = duration;
-  //       }
-  //       item.set('uri', self.generateAbsoluteURI(adBaseURL, item.get('uri')));
-  //     });
-  //
-  //     streamPlaylist.set('targetDuration', Math.ceil(highDuration));
-  //     adItems[0].set('discontinuity', true);
-  //
-  //     if (slot.sequenceID < startSequence) {
-  //       var pastSegmentCount = startSequence-slot.sequenceID;
-  //       if (pastSegmentCount <= adItems.length) {
-  //         // should show some but not all ad segments
-  //         items[0].set('discontinuity', true);
-  //         items = streamPlaylist.items.PlaylistItem = adItems.concat(items);
-  //         items.splice(0, pastSegmentCount);
-  //       } else {
-  //
-  //       }
-  //       // must add to this number with the number of items we've already inserted. in the future, this will be optimized into it's own model.
-  //       streamPlaylist.set('mediaSequence', startSequence + adItems.length);
-  //       sails.log.verbose('ad is in the past...');
-  //     } else if (startSequence + items.length < slot.sequenceID) {
-  //       // have not reached the ad yet
-  //       sails.log.verbose('have not reached ad yet... sequenceID: ' + slot.sequenceID);
-  //       return context;
-  //     } else {
-  //       sails.log.verbose('inserting ad...');
-  //
-  //       var idx = slot.sequenceID - startSequence;
-  //       if (items.length > idx) {
-  //         items[idx].set('discontinuity', true);
-  //       }
-  //
-  //       for (var i=0; i<adItems.length; i++) {
-  //         items.splice(idx+i, 0, adItems[i]);
-  //       }
-  //     }
-  //
-  //     sails.log.verbose('playlist: ' + JSON.stringify(streamPlaylist, null, 2));
-  //     return context;
-  //
-  //   });
-  // },
-
   insertLiveAd: function(context) {
     return Q.fcall(function() {
 
@@ -260,9 +196,6 @@ var self = module.exports = {
       var highDuration = streamPlaylist.get('targetDuration');
       var startSequence = streamPlaylist.get('mediaSequence');
       var adItems = adPlaylist.items.PlaylistItem;
-
-      //hack
-      // adItems = [adItems[0]];
 
       // make absolute URLs for ad Items + determine longest duration segment
       var totalAdDuration = 0;
