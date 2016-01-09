@@ -36,13 +36,14 @@ module.exports.policies = {
   ***************************************************************************/
 
   AdSlotController: {
-    insertAd: 'validateInsertAd'
+    insertAd: 'validateInsertAd',
+    clearAds: true
   },
 
   StitchController: {
     stitchMaster: 'confirmStitchQuery',
     stitchMedia: true,
-    
+
     stitchLive: 'validateLive',
     stitchLiveMedia: true
   }

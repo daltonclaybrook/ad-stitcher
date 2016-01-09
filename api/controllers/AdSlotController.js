@@ -62,6 +62,30 @@ var self = module.exports = {
 
 	},
 
+	clearAds: function(req, res) {
+		AdSlot.destroy({})
+		.exec(function(err) {
+			if (err) {
+				Responder.sendResponse(res, {
+					error: err
+				});
+			} else {
+				AdPlaylist.destroy({})
+				.exec(function(err2) {
+					if (err2) {
+						Responder.sendResponse(res, {
+							error: err2
+						});
+					} else {
+						Responder.sendResponse(res, {
+							payload: 'success'
+						});
+					}
+				});
+			}
+		});
+	},
+
 	/*
 		Helpers
 	*/
@@ -79,8 +103,6 @@ var self = module.exports = {
 		var sequenceID = sequence + itemCount + segmentsToAdd;
 
 		sails.log.verbose('creating sequenceID: ' + sequenceID + ', streamURL: ' + context.streamURL);
-
-		try {
 
 		AdSlot.create({
     	sequenceID: sequenceID,
@@ -121,10 +143,6 @@ var self = module.exports = {
 				})
 			}
     });
-
-	} catch (err) {
-		sails.log.verbose('catching error: ' + JSON. stringify(err, null, 2));
-	}
 
 		sails.log.verbose('\nsequence: ' + sequence + '\ntarget duration: ' + targetDuration + '\nitemCount: ' + itemCount + '\nsegments to add: ' + segmentsToAdd + '\nsequence ID: ' + sequenceID + '\n');
 		return deferred.promise;
